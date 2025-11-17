@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>display: block</title>
+    <style>
+      .area {
+        border: 1px solid #ccc;
+        padding: 8px;
+        margin: 12px 0;
+      }
+      .block {
+        display: block;
+        background-color: aquamarine;
+        margin: 10px 0;
+      }
+      .size {
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>display: block</h1>
+    <ul>
+      <li>줄바꿈이 일어남</li>
+      <li>기본적으로 가로 전체(가능하면) 차지</li>
+      <li>
+        <code>width</code>, <code>height</code>, <code>padding</code>,
+        <code>margin</code> 모두 적용
+      </li>
+    </ul>
+
+    <div class="area">
+      <div class="block">블록(기본 폭: 컨테이너 가로 채움)</div>
+      <div class="block size">블록(폭/높이/패딩 지정)</div>
+    </div>
+    <p>
+      대표 태그: <code>div</code>,
+      <code>ul</code>/<code>ol</code>/<code>li</code>, <code>p</code>,
+      <code>hr</code>, <code>form</code> …
+    </p>
+  </body>
+</html>

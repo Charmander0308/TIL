@@ -1,0 +1,58 @@
+package com.ssafy.mvc.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.ssafy.mvc.model.dto.Board;
+import com.ssafy.mvc.model.dto.SearchCondition;
+import com.ssafy.mvc.model.service.BoardService;
+
+@Controller
+public class BoardController {
+	
+	@Autowired
+	private final BoardService boardService;
+	
+	public BoardController(BoardService boardService) {
+		this.boardService = boardService;
+	}
+	
+	//등록페이지 주세요
+	@GetMapping("/writeform")
+	public String writeform() {
+		return "/board/writeform";
+	}
+	
+	//등록해줘잉
+	@PostMapping("/write")
+	public String write(@ModelAttribute Board board) {
+		//서비스 호출
+		boardService.writeBoard(board);
+		//전체 목록을 보여주도록 해줘잉
+		return "redirect:list";
+	}
+	
+	@GetMapping("/list")
+	public String list(Model model) {
+		model.addAttribute("boardList", boardService.getBoardList());
+		return "/board/list";
+	}
+	
+	@PostMapping("/update")
+	public String update(@ModelAttribute Board board) {
+		boardService.modifyBoard(board);
+		return "redirect:detail?id=" + board.getId();
+	}
+	
+	@GetMapping("/search")
+	public String search(@ModelAttribute SearchCondition condition, Model model) {
+		//?에 올 것은 -> 검색한 리스트/정렬한 리스트 -> 서비스 호출
+		model.addAttribute("boardList", boardService.search(condition));
+		return "/board/list";
+	}
+	
+}

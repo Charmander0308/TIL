@@ -1,0 +1,21 @@
+package com.ssafy.board.config;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class MyBatisConfig {
+	private static SqlSessionFactory factory;
+	
+	static {
+		//factory 건설
+		//설정파일 경로
+		String resource = "";
+		
+		
+	}
+	
+	public static SqlSessionFactory getFactory() {
+		return factory;
+	}
+	
+	
+}

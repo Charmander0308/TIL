@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Form Tag</title>
+</head>
+
+<body>
+  <!-- Form 태그 작성(GET/POST) -->
+  <h2>Form 태그 예제</h2>
+  <!-- 1. GET 방식 전송 -->
+  <!-- method 지정하지 않으면 기본은 GET방식 -->
+  <!-- action : 서버에 요청을 처리할 URL(인터넷주소) 지정 -->
+  <form action="" method="GET">
+    <!-- type : input의 종류를 의미함 (엄청나게 많음) -->
+    <!-- name : 서버에 전송할때 key가 된다. -->
+    <label>GET 검색어</label>
+    <input type="text" name="q">
+    <input type="submit" value="검색">
+  </form>
+  <!-- 2. POST 방식 전송 -->
+  <form action="" method="POST">
+    <label>POST 검색어</label>
+    <input type="text" name="q">
+    <!-- button 속성을 -> submit  -->
+    <button>검색</button>
+  </form>
+
+  <!-- 3. File Upload -->
+  <form action="" method="POST" enctype="multipart/form-data">
+    <label>POST 검색어</label>
+    <input type="file" name="file">
+    <!-- button 속성을 -> submit  -->
+    <button>업로드</button>
+  </form>
+</body>
+
+</html>

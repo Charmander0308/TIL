@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>05_sticky</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Sticky Position */
+     .sticky-container {
+      height: 300px;
+      width: 200px;
+      border: 2px double blue;
+      overflow-y: auto;
+     }
+
+     .sticky .square:nth-child(2){
+      position: sticky;
+      background-color: beige;
+      top: 0;
+     }
+     .sticky-content {
+      height: 500px;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sticky Position -->
+      <div>
+        <div class="title">STICKY</div>
+        <div class="sticky-container sticky">
+          <div class="square"></div>
+          <div class="square">Sticky</div>
+          <div class="square"></div>
+          <div class="sticky-content">스크롤해보세요!</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

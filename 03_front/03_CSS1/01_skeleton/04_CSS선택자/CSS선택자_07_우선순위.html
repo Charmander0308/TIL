@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>07_우선순위</title>
+    <style>
+      /*  아래의 내용은 추후 배울 예정 */
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5rem;
+        height: 5rem;
+        background-color: orange;
+        margin-bottom: 1rem;
+      }
+
+      /* 주석을 해지하고 결과를 확인해보세요 */
+
+      /* .red {
+        background-color: red;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      #green {
+        background-color: green;
+      }
+
+      .yellow {
+        background-color: yellow !important;
+      } */
+    </style>
+  </head>
+  <body>
+    <div>0</div>
+    <div class="red">1</div>
+    <div class="red blue">2</div>
+    <div class="blue red">3</div>
+    <div class="red" id="green">4</div>
+    <div class="red" id="green" style="background-color: grey">5</div>
+    <div class="yellow" id="green">6</div>
+    <div class="yellow" id="green" style="background-color: purple">7</div>
+  </body>
+</html>

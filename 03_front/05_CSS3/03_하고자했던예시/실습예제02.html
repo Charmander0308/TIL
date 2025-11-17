@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="style.css">
+<title>SSAFY 대시보드 · 더미</title>
+</head>
+<body>
+<div class="page container">
+
+  <!-- HEADER -->
+  <header>
+    <div class=" top">
+      <strong class="brand">SSAFY</strong>
+      <nav aria-label="주요 메뉴">
+        <ul>
+          <li><a href="#">마이캠퍼스</a></li>
+          <li><a href="#">강의실</a></li>
+          <li><a href="#">커뮤니티</a></li>
+          <li><a href="#">HELPDESK</a></li>
+          <li><a href="#">멘토링</a></li>
+        </ul>
+      </nav>
+      <form class="search" role="search" aria-label="사이트 검색">
+        🔎 <input type="search" placeholder="검색어를 입력하세요" />
+      </form>
+      <div class="actions">
+        <a class="btn" href="#">JOB</a>
+        <a class="btn" href="#">SSAFY GIT</a>
+        <a class="btn primary" href="#">Meeting</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div>
+
+      <!-- 요약 타일 3개 -->
+      <section class="tiles" aria-label="요약 영역">
+        <article class="tile yellow" aria-labelledby="t1">
+          <h2 id="t1" class="title">출석체크 &amp; 현황</h2>
+          <p class="muted">출석체크는 강의실에서 가능합니다</p>
+          <div class="big">08.20 수요일</div>
+        </article>
+        <article class="tile blue" aria-labelledby="t2">
+          <h2 id="t2" class="title">마일리지</h2>
+          <p class="muted">레벨업 경험치</p>
+          <div class="big">Lv. 03 · 120 EXP</div>
+        </article>
+        <article class="tile cyan" aria-labelledby="t3">
+          <h2 id="t3" class="title">알림</h2>
+          <div class="big">0</div>
+          <p class="muted">새 알림이 없습니다</p>
+        </article>
+      </section>
+
+      <!-- 주차별 커리큘럼 / 퀘스트·평가 -->
+      <section class="cols-2" aria-label="학습 현황">
+        <!-- 왼쪽: 커리큘럼 -->
+        <article class="card col">
+          <header><h3 class="title">주차별 커리큘럼</h3></header>
+          <div class="timeline">
+            <div class="dot">
+              <span datetime="2025-08-18T00:00">2025.08.18(월) · 09:00</span>
+              <div><strong>입과식 2차 OT</strong> — 전체 공지/오리엔테이션</div>
+              <small class="muted">장소: 온라인</small>
+            </div>
+            <div class="dot">
+              <span datetime="2025-08-18T13:00">2025.08.18(월) · 13:00</span>
+              <div><strong>Web(Front) · HTML I</strong></div>
+              <small class="muted">담당: 홍길동 / 서울캠퍼스</small>
+            </div>
+          </div>
+        </article>
+
+        <!-- 오른쪽: 퀘스트/평가 -->
+        <aside class="card col" aria-labelledby="qtitle">
+          <h3 id="qtitle" class="title">Quest / 평가</h3>
+          <ul class="quest" aria-label="과제 목록(더미)">
+            <li><span>미제출 · 알고리즘 과제#1</span><span class="badge">D-2</span></li>
+            <li><span>미제출 · Web 기초 퀴즈</span><span class="badge">진행중</span></li>
+            <li><span>평가 · 파이썬 기초 평가</span><span class="badge">예정</span></li>
+            <li><span>미제출 · 프로젝트 제안서</span><span class="badge">미제출</span></li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- 학습자료 / 학습중 이러닝 -->
+      <section style="margin-top:18px" class="row">
+        <article class="card" style="flex:1">
+          <header class="row" style="justify-content:space-between; align-items:center">
+            <h3 class="title">학습자료</h3>
+          </header>
+          <div class="cards" aria-label="카드 슬라이드(더미)">
+            <article>
+              <figure>
+                <img class="thumb" alt="썸네일" src="">
+                <figcaption class="muted">카테고리 · 교육</figcaption>
+              </figure>
+              <strong>SW 아카데미 소개</strong>
+              <p class="muted">슬라이드 · 27p</p>
+            </article>
+            <article>
+              <figure>
+                <img class="thumb" alt="썸네일" src="" style="background:#ffe5d5">
+                <figcaption class="muted">자료구조</figcaption>
+              </figure>
+              <strong>알고리즘 학습자료</strong>
+              <p class="muted">문서 · 10p</p>
+            </article>
+            <article>
+              <figure>
+                <img class="thumb" alt="썸네일" src="" style="background:#e7fbdc">
+                <figcaption class="muted">취업특강</figcaption>
+              </figure>
+              <strong>기업 정보조사 방법</strong>
+              <p class="muted">영상 · 9분</p>
+            </article>
+          </div>
+        </article>
+
+        <aside class="card aside" aria-labelledby="ln">
+          <h3 id="ln" class="title">학습중 이러닝</h3>
+          <p class="muted">학습중 이러닝이 없습니다.</p>
+          <div style="height:140px; background:#f3f4f6; border:1px dashed #cbd5e1; border-radius:8px"></div>
+        </aside>
+      </section>
+
+      <!-- SSAFYcial / 자유게시판 -->
+      <section style="margin-top:18px" class="boards">
+        <section class="card">
+          <h3 class="title">SSAFYcial</h3>
+          <ul class="posts">
+            <li><span>에세이: 꼭 필요한 개발자로 거듭나는 법 (13…)</span><time>오늘</time></li>
+            <li><span>Samsung SW · AI academy For Youth 런칭</span><time>1일 전</time></li>
+            <li><span>그럭저럭… 티어가? (13기 수료생 기고)</span><time>2일 전</time></li>
+            <li><span>2학기 팀프로젝트 준비 이것만 하면 된다구…</span><time>3일 전</time></li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h3 class="title">자유게시판</h3>
+          <p class="muted">등록된 게시글이 없습니다.</p>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER (항상 하단) -->
+  <footer class="foot">
+      <div>
+        <strong>SSAFY</strong>
+        <p class="muted">서울특별시 어딘가 00-00 | 대표 000 | 02-0000-0000</p>
+        <nav class="mini" aria-label="푸터 링크">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보 처리방침</a>
+          <a href="#">오시는 길</a>
+          <a href="#">고객센터</a>
+        </nav>
+      </div>
+      <div style="text-align:right">
+        <a class="btn" href="#">e-book</a>
+        <div class="muted" style="margin-top:8px">© 2025 SSAFY (Dummy)</div>
+      </div>
+  </footer>
+
+</div>
+</body>
+</html>

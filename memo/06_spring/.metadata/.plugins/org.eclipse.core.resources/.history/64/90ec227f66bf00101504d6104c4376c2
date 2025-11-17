@@ -1,0 +1,9 @@
+package com.ssafy.mvc.view;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.view.AbstractView;
+
+@Component
+public class FileDownloadView extends AbstractView {
+	
+}

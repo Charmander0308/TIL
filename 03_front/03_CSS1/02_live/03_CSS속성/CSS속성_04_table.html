@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Table 속성</title>
+  <style>
+    body { margin:16px; font-family:system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    h2 { margin-top:32px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; }
+    table { width:100%; border:1px solid #333; background:#fff; }
+    caption { padding:6px; font-weight:600; }
+    th, td { border:1px solid #333; padding:6px 8px; }
+    .note { color:#555; font-size:14px; margin:6px 0 16px; }
+    .w360 { width:360px; }            /* table-layout 예시 고정폭 */
+    .nowrap { white-space:nowrap; }
+    /* 각 섹션 전용 클래스 */
+    .separate { border-collapse: separate; }
+    .collapse { border-collapse: collapse; }
+    .spacing-none { border-spacing: 0; }
+    .spacing-8 { border-spacing: 8px; }
+    .spacing-custom { border-spacing: 16px 4px; } /* 가로 16px, 세로 4px */
+    .layout-auto { table-layout: auto; }
+    .layout-fixed { table-layout: fixed; }
+    .empty-show { border-collapse: separate; empty-cells: show; }
+    .empty-hide { border-collapse: separate; empty-cells: hide; }
+    thead tr { background:#f1f5f9; }
+    tfoot tr { background:#f9f5ff; font-weight:700; }
+    /* 정렬 데모 */
+    .va-top    td { height:60px; vertical-align: top; }
+    .va-middle td { height:60px; vertical-align: middle; }
+    .va-bottom td { height:60px; vertical-align: bottom; }
+    .ta-left  td { text-align:left; }
+    .ta-center td { text-align:center; }
+    .ta-right td { text-align:right; }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Table 속성</h1>
+  <p class="note">각 표는 속성값에 따른 차이를 직접 눈으로 확인할 수 있게 구성했습니다.</p>
+
+  <!-- 1) border-collapse -->
+  <h2>1) border-collapse</h2>
+  <p class="note"><code>separate</code>(기본): 셀 경계를 따로 그림, <code>collapse</code>: 인접 경계를 합쳐 하나로 그림</p>
+  <div class="grid">
+    <table class="separate spacing-8">
+      <caption>separate + border-spacing:8px</caption>
+      <tr><th>A</th><th>B</th><th>C</th></tr>
+      <tr><td>1</td><td>2</td><td>3</td></tr>
+      <tr><td>4</td><td>5</td><td>6</td></tr>
+    </table>
+
+    <table class="collapse">
+      <caption>collapse</caption>
+      <tr><th>A</th><th>B</th><th>C</th></tr>
+      <tr><td>1</td><td>2</td><td>3</td></tr>
+      <tr><td>4</td><td>5</td><td>6</td></tr>
+    </table>
+  </div>
+
+  <!-- 2) border-spacing -->
+  <h2>2) border-spacing (separate일 때만 적용)</h2>
+  <div class="grid">
+    <table class="separate spacing-none">
+      <caption>border-spacing: 0</caption>
+      <tr><th>A</th><th>B</th></tr>
+      <tr><td>1</td><td>2</td></tr>
+      <tr><td>3</td><td>4</td></tr>
+    </table>
+
+    <table class="separate spacing-8">
+      <caption>border-spacing: 8px</caption>
+      <tr><th>A</th><th>B</th></tr>
+      <tr><td>1</td><td>2</td></tr>
+      <tr><td>3</td><td>4</td></tr>
+    </table>
+
+    <table class="separate spacing-custom">
+      <caption>border-spacing: 16px 4px (가로/세로)</caption>
+      <tr><th>A</th><th>B</th></tr>
+      <tr><td>1</td><td>2</td></tr>
+      <tr><td>3</td><td>4</td></tr>
+    </table>
+  </div>
+
+  <!-- 3) table-layout -->
+  <h2>3) table-layout</h2>
+  <p class="note"><code>auto</code>: 내용 기반으로 열 너비 계산 · <code>fixed</code>: 첫 행/표 너비만으로 고정 계산(빠름, 균등)</p>
+  <div class="grid">
+    <table class="layout-auto w360">
+      <caption>auto (넓은 내용 칸이 커짐)</caption>
+      <tr><th>짧음</th><th>아주아주아주길다란헤더</th><th>중간</th></tr>
+      <tr><td>1</td><td class="nowrap">content-content-content</td><td>3</td></tr>
+    </table>
+
+    <table class="layout-fixed w360">
+      <caption>fixed (균등 배분)</caption>
+      <tr><th>짧음</th><th>아주아주아주길다란헤더</th><th>중간</th></tr>
+      <tr><td>1</td><td class="nowrap">content-content-content</td><td>3</td></tr>
+    </table>
+  </div>
+
+  <!-- 4) caption-side -->
+  <h2>4) caption-side</h2>
+  <div class="grid">
+    <table style="caption-side: top;">
+      <caption>caption-side: top</caption>
+      <tr><th>항목</th><th>값</th></tr>
+      <tr><td>A</td><td>1</td></tr>
+    </table>
+
+    <table style="caption-side: bottom;">
+      <caption>caption-side: bottom</caption>
+      <tr><th>항목</th><th>값</th></tr>
+      <tr><td>A</td><td>1</td></tr>
+    </table>
+  </div>
+
+  <!-- 5) empty-cells -->
+  <h2>5) empty-cells</h2>
+  <div class="grid">
+    <table class="empty-show spacing-8">
+      <caption>show (빈칸의 테두리/배경 표시)</caption>
+      <tr><th>이름</th><th>점수</th></tr>
+      <tr><td>홍길동</td><td>90</td></tr>
+      <tr><td>김철수</td><td></td></tr> <!-- 빈 칸 -->
+    </table>
+
+    <table class="empty-hide spacing-8">
+      <caption>hide (빈칸 숨김)</caption>
+      <tr><th>이름</th><th>점수</th></tr>
+      <tr><td>홍길동</td><td>90</td></tr>
+      <tr><td>김철수</td><td></td></tr>
+    </table>
+  </div>
+
+  <!-- 6) thead/tbody/tfoot + 정렬 -->
+  <h2>6) thead / tbody / tfoot + 정렬</h2>
+  <p class="note"><code>vertical-align</code>은 셀 내부 수직 정렬, <code>text-align</code>은 가로 정렬</p>
+  <div class="grid">
+    <table class="va-top ta-left">
+      <caption>top + left</caption>
+      <thead><tr><th>품목</th><th>수량</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>사과</td><td>3</td><td>상세 메모<br>두 줄</td></tr>
+        <tr><td>배</td><td>1</td><td></td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="3">합계 4</td></tr></tfoot>
+    </table>
+
+    <table class="va-middle ta-center">
+      <caption>middle + center</caption>
+      <thead><tr><th>품목</th><th>수량</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>사과</td><td>3</td><td>상세 메모<br>두 줄</td></tr>
+        <tr><td>배</td><td>1</td><td></td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="3">합계 4</td></tr></tfoot>
+    </table>
+
+    <table class="va-bottom ta-right">
+      <caption>bottom + right</caption>
+      <thead><tr><th>품목</th><th>수량</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>사과</td><td>3</td><td>상세 메모<br>두 줄</td></tr>
+        <tr><td>배</td><td>1</td><td></td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="3">합계 4</td></tr></tfoot>
+    </table>
+  </div>
+
+  <!-- 7) colgroup/col -->
+  <h2>7) colgroup / col (열 단위 스타일/너비)</h2>
+  <p class="note"><code>&lt;col&gt;</code>에 너비/배경을 주면 해당 열 전체에 적용됩니다.</p>
+  <table>
+    <caption>열 너비/배경 적용</caption>
+    <colgroup>
+      <col style="width:30%; background:#fff7ed;">
+      <col style="width:40%; background:#eff6ff;">
+      <col style="width:auto; background:#f0fdf4;">
+    </colgroup>
+    <thead><tr><th>이름(30%)</th><th>설명(40%)</th><th>비고(auto)</th></tr></thead>
+    <tbody>
+      <tr><td>Alpha</td><td>열 전체가 같은 배경색</td><td>메모</td></tr>
+      <tr><td>Beta</td><td>colgroup으로 제어</td><td>메모</td></tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

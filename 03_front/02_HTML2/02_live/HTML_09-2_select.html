@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>select Tag</title>
+  </head>
+  <body>
+    <h1>📌 select 태그 종합 예제</h1>
+    <!-- form 태그와 함께 select 사용 -->
+    <form>
+      <!-- 1. 기본 select -->
+      <div>
+        <select name="country" id="">
+          <option value="kr">대한민국</option>
+          <option value="jp">일본</option>
+          <option value="cn">중국</option>
+          <option value="usa">미국</option>
+          <option value="ssafy">싸무국</option>
+        </select>
+      </div>
+      <!-- 2. optgroup : 옵션 그룹화 -->
+      <h3>자동차 그룹</h3>
+      <div>
+        <select name="car">
+          <optgroup label="한국 브랜드">
+            <option value="hyundai">현대</option>
+            <option value="kia">기아</option>
+          </optgroup>
+          <optgroup label="독일 브랜드">
+            <option value="benz">벤츠</option>
+            <option value="fox">폭스바겐</option>
+            <option value="bmw">버스메트로워킹</option>
+          </optgroup>
+
+        </select>
+      </div>
+      <!-- 3. multiple 속성 : 다중 선택 가능 -->
+     <div>
+        <select name="country" id="" multiple size="1">
+          <option value="kr">대한민국</option>
+          <option value="jp">일본</option>
+          <option value="cn">중국</option>
+          <option value="usa">미국</option>
+          <option value="ssafy">싸무국</option>
+        </select>
+      </div>
+      <!-- 4. disabled : 선택 불가 옵션 -->
+      <div>
+        <select name="country" id="">
+          <option value="kr">대한민국</option>
+          <option value="jp">일본</option>
+          <option value="cn">중국</option>
+          <option value="usa">미국</option>
+          <option value="ssafy" disabled>싸무국</option>
+        </select>
+      </div>
+    </form>
+  </body>
+</html>

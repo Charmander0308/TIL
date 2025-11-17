@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 폰트 속성</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+      /* reset css */
+      * {
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+
+      body {
+        margin: 1rem;
+      }
+
+      h6,
+      h5,
+      h4,
+      h3,
+      h2,
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      /* title style */
+      h3 {
+        text-align: center;
+      }
+
+      hr {
+        width: 60%;
+      }
+
+      .example_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25%, auto));
+        margin-bottom: 3rem;
+      }
+
+      .example {
+        justify-self: center;
+      }
+
+      .font_container {
+        width: 220px;
+        height: 120px;
+        border: 1px solid black;
+        background-color: rgb(227, 248, 238);
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .font_item {
+        text-align: center;
+      }
+
+      /* font-family 예시 */
+      .font_family_roboto {
+        font-family: "Roboto", sans-serif;
+      }
+
+      .font_family_noto {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+
+      .font_family_playfair {
+        font-family: "Playfair Display", serif;
+      }
+
+      .font_family_pacifico {
+        font-family: "Pacifico", cursive;
+      }
+
+      /* font-size 예시 */
+      .font_size_px {
+        font-size: 12px;
+      }
+
+      .font_size_em {
+        font-size: 1.5em;
+      }
+
+      .font_size_rem {
+        font-size: 1.5rem;
+      }
+
+      .font_size_percent {
+        font-size: 150%;
+      }
+
+      .font_size_larger {
+        font-size: larger;
+      }
+
+      .font_size_xx_large {
+        font-size: xx-large;
+      }
+
+      /* font-style 예시 */
+      .font_style_normal {
+        font-style: normal;
+      }
+
+      .font_style_italic {
+        font-style: italic;
+      }
+
+      .font_style_oblique {
+        font-style: oblique;
+      }
+
+      /* font-variant 예시 */
+      .font_variant_normal {
+        font-variant: normal;
+      }
+
+      .font_variant_small_caps {
+        font-variant: small-caps;
+      }
+
+      /* font-weight 예시 */
+      .font_weight_normal {
+        font-weight: normal;
+      }
+
+      .font_weight_bold {
+        font-weight: bold;
+      }
+
+      .font_weight_100 {
+        font-weight: 100;
+      }
+
+      .font_weight_400 {
+        font-weight: 400;
+      }
+
+      .font_weight_700 {
+        font-weight: 700;
+      }
+
+      .font_weight_900 {
+        font-weight: 900;
+      }
+
+      /* font 축약형 예시 */
+      .font_shorthand_1 {
+        font: italic small-caps bold 16px/1.5 "Roboto", sans-serif;
+      }
+
+      .font_shorthand_2 {
+        font: small-caps 700 1.2rem/1.8 "Playfair Display", serif;
+      }
+
+      .font_shorthand_3 {
+        font: italic 1.4em "Pacifico", cursive;
+      }
+
+      .font_shorthand_4 {
+        font: 900 18px "Noto Sans KR", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center; margin-bottom: 2rem">
+      <h2>CSS 폰트 속성 가이드</h2>
+      <p>웹 디자인에서 텍스트 스타일링을 위한 다양한 CSS 폰트 속성들을 알아봅니다.</p>
+    </div>
+    <h3>font-family</h3>
+    <p style="text-align: center; margin-bottom: 1rem">웹 페이지에서 사용할 글꼴을 지정합니다. 여러 글꼴을 우선순위대로 나열할 수 있으며, 첫 번째 폰트를 사용할 수 없는 경우 다음 폰트가 적용됩니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) Roboto</p>
+        <div class="font_container">
+          <div class="font_item font_family_roboto">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) Noto Sans KR</p>
+        <div class="font_container">
+          <div class="font_item font_family_noto">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) Playfair Display</p>
+        <div class="font_container">
+          <div class="font_item font_family_playfair">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) Pacifico</p>
+        <div class="font_container">
+          <div class="font_item font_family_pacifico">안녕하세요! Hello!</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>font-size</h3>
+    <p style="text-align: center; margin-bottom: 1rem">텍스트의 크기를 지정합니다. 절대 단위(px)나 상대 단위(em, rem, %, 키워드)를 사용할 수 있습니다. 상대 단위는 반응형 디자인에 더 적합합니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) 12px</p>
+        <div class="font_container">
+          <div class="font_item font_size_px">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) 1.5em</p>
+        <div class="font_container">
+          <div class="font_item font_size_em">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) 1.5rem</p>
+        <div class="font_container">
+          <div class="font_item font_size_rem">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) 150%</p>
+        <div class="font_container">
+          <div class="font_item font_size_percent">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>5) larger</p>
+        <div class="font_container">
+          <div class="font_item font_size_larger">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>6) xx-large</p>
+        <div class="font_container">
+          <div class="font_item font_size_xx_large">안녕하세요! Hello!</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>font-style</h3>
+    <p style="text-align: center; margin-bottom: 1rem">
+      텍스트의 스타일을 지정합니다. normal은 기본 스타일, italic은 이탤릭체, oblique는 기울임체를 나타냅니다. italic과 oblique는 비슷해 보이지만 구현 방식이 다릅니다.
+    </p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) normal</p>
+        <div class="font_container">
+          <div class="font_item font_style_normal">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) italic</p>
+        <div class="font_container">
+          <div class="font_item font_style_italic">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) oblique</p>
+        <div class="font_container">
+          <div class="font_item font_style_oblique">안녕하세요! Hello!</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>font-variant</h3>
+    <p style="text-align: center; margin-bottom: 1rem">
+      텍스트의 변형을 지정합니다. small-caps는 소문자를 작은 대문자로 표시하는 기능입니다. 주로 제목이나 헤더에 사용되어 텍스트에 독특한 스타일을 부여합니다.
+    </p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) normal</p>
+        <div class="font_container">
+          <div class="font_item font_variant_normal">Hello! Text with normal letters.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) small-caps</p>
+        <div class="font_container">
+          <div class="font_item font_variant_small_caps">Hello! Text with small caps.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>font-weight</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">텍스트의 두께(굵기)를 지정합니다. normal(400)과 bold(700) 같은 키워드나 100부터 900까지의 100단위 숫자 값을 사용할 수 있습니다. 숫자가 클수록 더 두꺼워지며, 각 값은 Thin(100), Extra Light(200), Light(300), Regular(400), Medium(500), Semi Bold(600), Bold(700), Extra Bold(800), Black(900)과 같은 두께를 나타냅니다. 단, 모든 폰트가 9가지 두께를 모두 지원하는 것은 아닙니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) 100</p>
+        <div class="font_container">
+          <div class="font_item" style="font-weight: 100;">
+            안녕하세요! Hello!
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) 200</p>
+        <div class="font_container">
+          <div class="font_item" style="font-weight: 200;">
+            안녕하세요! Hello!
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) 300</p>
+        <div class="font_container">
+          <div class="font_item" style="font-weight: 300;">
+            안녕하세요! Hello!
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) 400 (normal)</p>
+        <div class="font_container">
+          <div class="font_item" style="font-weight: 400;">
+            안녕하세요! Hello!
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>5) 500</p>
+        <div class="font_container">
+          <div class="font_item" style="font-weight: 500;">
+            안녕하세요! Hello!
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>6) 600</p>
+        <div class="font_container">
+          <div class="font_item" style="font-weight: 600;">
+            안녕하세요! Hello!
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>7) 700 (bold)</p>
+        <div class="font_container">
+          <div class="font_item" style="font-weight: 700;">
+            안녕하세요! Hello!
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>8) 800</p>
+        <div class="font_container">
+          <div class="font_item" style="font-weight: 800;">
+            안녕하세요! Hello!
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>9) 900</p>
+        <div class="font_container">
+          <div class="font_item" style="font-weight: 900;">
+            안녕하세요! Hello!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>font (축약형)</h3>
+    <p style="text-align: center; margin-bottom: 1rem">
+      여러 폰트 속성을 한 번에 설정하는 축약형 속성입니다. 순서는 'font-style font-variant font-weight font-size/line-height font-family'로 지정합니다. font-size와 font-family는 필수이며 나머지는 선택
+      사항입니다.
+    </p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) italic small-caps bold 16px/1.5 'Roboto'</p>
+        <div class="font_container">
+          <div class="font_item font_shorthand_1">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) small-caps 700 1.2rem/1.8 'Playfair'</p>
+        <div class="font_container">
+          <div class="font_item font_shorthand_2">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) italic 1.4em 'Pacifico'</p>
+        <div class="font_container">
+          <div class="font_item font_shorthand_3">안녕하세요! Hello!</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) 900 18px 'Noto Sans KR'</p>
+        <div class="font_container">
+          <div class="font_item font_shorthand_4">안녕하세요! Hello!</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

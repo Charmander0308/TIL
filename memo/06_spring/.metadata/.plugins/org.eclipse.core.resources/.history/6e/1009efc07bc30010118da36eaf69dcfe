@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.mvc.model.dao.BoardDao">
+	<!-- 전체 게시글 조회 -->
+	<select id="selectAll" resultType="Board">
+		<!-- *로 퉁치고싶은데 ㅠ -->
+		SELECT id, title, writer, content, reg_date as regDate, view_cnt as viewCnt
+		FROM board;
+	</select>
+	<!-- 상세 게시글 조회 -->
+	<select id="selectOne" resultType="board" parameterType="int">
+		SELECT *
+		FROM board
+		WHERE id=#{id};
+	</select>
+	<!-- 게시글 등록 -->
+	<insert id="insertBoard" parameterType="Board">
+		INSERT INTO board (title, writer, content)
+		VALUES (#{title}, #{writer}, #{content});
+	</insert>
+	<!-- 게시글 수정 -->
+	<update id="updateBoard" parameterType="Board">
+		UPDATE board
+		SET title = #{title}, content = #{content}
+		WHERE id = #{id};
+	</update>
+	<!-- 게시글 삭제 -->
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM board
+		WHERE id = #{idd};
+	</delete>
+	<!-- 조회수 증가 -->
+	<update id="updateViewCnt" parameterType="int">
+		UPDATE board
+		SET view_cnt = view_cnt+1
+		WHERE id = #{id};
+	</update>
+	<!-- 검색 기능 -->
+	<select id="search" parameterType="searchCondition" resultType="Board">
+		SELECT * FROM board
+		<!-- 검색 조건이 있다면... -->
+		<if test="key != 'none'">
+			
+		</if>
+	</select>
+</mapper>

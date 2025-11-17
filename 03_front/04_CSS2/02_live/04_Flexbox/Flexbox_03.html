@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox 속성 데모</title>
+    <style>
+      /* 기본 스타일 */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 2rem;
+        line-height: 1.5;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      .section {
+        margin-bottom: 3rem;
+      }
+
+      /* 공통 컨테이너 스타일 */
+      .flex-container {
+        display: flex;
+        border: 2px solid #333;
+        margin-bottom: 1.5rem;
+        background-color: rgb(248, 237, 227);
+        width: 100%;
+        min-height: 100px;
+      }
+
+      /* 공통 아이템 스타일 */
+      .flex-item {
+        padding: 15px;
+        background-color: rgb(189, 210, 182);
+        border: 1px dotted rgb(121, 135, 119);
+        text-align: center;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* flex-basis 예제 스타일 */
+      .basis-auto {
+        flex-basis: auto;
+      }
+      .basis-0 {
+        flex-basis: 0;
+      }
+      .basis-100 {
+        flex-basis: 100px;
+      }
+      .basis-200 {
+        flex-basis: 200px;
+      }
+      .basis-50p {
+        flex-basis: 50%;
+      }
+
+      /* flex-grow 예제 스타일 */
+      .grow-0 {
+        flex-grow: 0;
+      }
+      .grow-1 {
+        flex-grow: 1;
+      }
+      .grow-2 {
+        flex-grow: 2;
+      }
+      .grow-3 {
+        flex-grow: 3;
+      }
+
+      /* flex-shrink 예제 스타일 */
+      .shrink-0 {
+        flex-shrink: 0;
+        width: 200px;
+      }
+      .shrink-1 {
+        flex-shrink: 1;
+        width: 200px;
+      }
+      .shrink-2 {
+        flex-shrink: 2;
+        width: 200px;
+      }
+      .shrink-3 {
+        flex-shrink: 3;
+        width: 200px;
+      }
+
+      /* flex 축약 속성 예제 스타일 */
+      .flex-1 {
+        flex: 1;
+      }
+      .flex-2 {
+        flex: 2;
+      }
+      .flex-1-1-100 {
+        flex: 1 1 100px;
+      }
+      .flex-2-0-100 {
+        flex: 2 0 100px;
+      }
+      .flex-0-1-auto {
+        flex: 0 1 auto;
+      }
+
+      /* 설명 박스 스타일 */
+      .description {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: monospace;
+      }
+
+      .controls {
+        margin-bottom: 1.5rem;
+      }
+
+      .label {
+        display: inline-block;
+        background-color: #e9ecef;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        margin: 0.25rem;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flexbox 속성 데모</h1>
+
+    <div class="section" id="order">
+      <h2>1. order 속성</h2>
+      <div class="description">
+        <p>
+          <code>order</code>
+          속성은 플렉스 아이템의 배치 순서를 결정합니다. 기본값은 0이며, 값이 작을수록 앞에 배치됩니다.
+        </p>
+      </div>
+
+      <h3>기본 순서 (order: 0)</h3>
+      <div class="flex-container">
+        <div class="flex-item">A (order: 0)</div>
+        <div class="flex-item">B (order: 0)</div>
+        <div class="flex-item">C (order: 0)</div>
+      </div>
+
+      <h3>order 속성 적용</h3>
+      <div class="flex-container">
+        <div class="flex-item" style="order: 3">A (order: 3)</div>
+        <div class="flex-item" style="order: 1">B (order: 1)</div>
+        <div class="flex-item" style="order: 2">C (order: 2)</div>
+      </div>
+
+      <h3>음수 order 값 적용</h3>
+      <div class="flex-container">
+        <div class="flex-item" style="order: 0">A (order: 0)</div>
+        <div class="flex-item" style="order: -1">B (order: -1)</div>
+        <div class="flex-item" style="order: 1">C (order: 1)</div>
+      </div>
+    </div>
+
+    <div class="section" id="flex-basis">
+      <h2>2. flex-basis 속성</h2>
+      <div class="description">
+        <p>
+          <code>flex-basis</code>
+          는 flex 아이템의 초기 크기를 설정합니다. 아이템이 늘어나거나 줄어들기 전의 기본 크기를 지정합니다.
+        </p>
+      </div>
+
+      <h3>flex-basis: auto (기본값)</h3>
+      <div class="flex-container">
+        <div class="flex-item basis-auto">
+          auto
+          <br />
+          (내용에 따라 결정)
+        </div>
+        <div class="flex-item basis-auto">
+          auto
+          <br />
+          더 길어진 내용
+        </div>
+        <div class="flex-item basis-auto">auto</div>
+      </div>
+
+      <h3>flex-basis: 0</h3>
+      <div class="flex-container">
+        <div class="flex-item basis-0">0</div>
+        <div class="flex-item basis-0">0</div>
+        <div class="flex-item basis-0">0</div>
+      </div>
+
+      <h3>flex-basis: 특정 픽셀값</h3>
+      <div class="flex-container">
+        <div class="flex-item basis-100">100px</div>
+        <div class="flex-item basis-200">200px</div>
+        <div class="flex-item basis-100">100px</div>
+      </div>
+
+      <h3>flex-basis: 백분율</h3>
+      <div class="flex-container">
+        <div class="flex-item basis-50p">50%</div>
+        <div class="flex-item basis-auto">auto</div>
+      </div>
+    </div>
+
+    <div class="section" id="flex-grow">
+      <h2>3. flex-grow 속성</h2>
+      <div class="description">
+        <p>
+          <code>flex-grow</code>
+          는 flex 아이템이 컨테이너의 남은 공간을 얼마나 차지할지 결정합니다. 값이 클수록 더 많은 공간을 차지합니다.
+        </p>
+      </div>
+
+      <h3>모든 아이템 flex-grow: 1</h3>
+      <div class="flex-container">
+        <div class="flex-item grow-1">1</div>
+        <div class="flex-item grow-1">1</div>
+        <div class="flex-item grow-1">1</div>
+      </div>
+
+      <h3>서로 다른 flex-grow 값</h3>
+      <div class="flex-container">
+        <div class="flex-item grow-1">1</div>
+        <div class="flex-item grow-2">2</div>
+        <div class="flex-item grow-3">3</div>
+      </div>
+
+      <h3>일부만 flex-grow 적용</h3>
+      <div class="flex-container">
+        <div class="flex-item grow-0">0</div>
+        <div class="flex-item grow-1">1</div>
+        <div class="flex-item grow-0">0</div>
+      </div>
+    </div>
+
+    <div class="section" id="flex-shrink">
+      <h2>4. flex-shrink 속성</h2>
+      <div class="description">
+        <p>
+          <code>flex-shrink</code>
+          는 컨테이너가 작아질 때 아이템이 얼마나 줄어들지 결정합니다. 값이 클수록 더 많이 줄어듭니다.
+        </p>
+        <p>창 크기를 줄여서 효과를 확인해보세요!</p>
+      </div>
+
+      <h3>서로 다른 flex-shrink 값 (모든 아이템 기본 너비: 200px)</h3>
+      <div class="flex-container">
+        <div class="flex-item shrink-0">0 (줄어들지 않음)</div>
+        <div class="flex-item shrink-1">1</div>
+        <div class="flex-item shrink-2">2</div>
+        <div class="flex-item shrink-3">3</div>
+      </div>
+    </div>
+
+    <div class="section" id="flex">
+      <h2>5. flex 축약 속성 (flex-grow, flex-shrink, flex-basis)</h2>
+      <div class="description">
+        <p>
+          <code>flex</code>
+          는
+          <code>flex-grow</code>
+          ,
+          <code>flex-shrink</code>
+          ,
+          <code>flex-basis</code>
+          의 축약형입니다.
+        </p>
+        <p>
+          형식:
+          <code>flex: grow shrink basis;</code>
+        </p>
+      </div>
+
+      <h3>flex: 1 (= flex: 1 1 0)</h3>
+      <div class="flex-container">
+        <div class="flex-item flex-1">flex: 1</div>
+        <div class="flex-item flex-1">flex: 1</div>
+        <div class="flex-item flex-1">flex: 1</div>
+      </div>
+
+      <h3>서로 다른 flex 값</h3>
+      <div class="flex-container">
+        <div class="flex-item flex-1">flex: 1</div>
+        <div class="flex-item flex-2">flex: 2</div>
+        <div class="flex-item flex-1">flex: 1</div>
+      </div>
+
+      <h3>다양한 flex 축약 속성</h3>
+      <div class="flex-container">
+        <div class="flex-item flex-1-1-100">flex: 1 1 100px</div>
+        <div class="flex-item flex-2-0-100">flex: 2 0 100px</div>
+        <div class="flex-item flex-0-1-auto">flex: 0 1 auto</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>요약</h2>
+      <div class="description">
+        <ul>
+          <li>
+            <strong>order</strong>
+            : 플렉스 아이템의 배치 순서를 설정합니다.
+          </li>
+          <li>
+            <strong>flex-basis</strong>
+            : 아이템의 초기 크기를 결정합니다.
+          </li>
+          <li>
+            <strong>flex-grow</strong>
+            : 남은 공간을 얼마나 차지할지 결정합니다.
+          </li>
+          <li>
+            <strong>flex-shrink</strong>
+            : 공간이 부족할 때 얼마나 줄어들지 결정합니다.
+          </li>
+          <li>
+            <strong>flex</strong>
+            : 위 세 속성을 한 번에 설정합니다 (flex: grow shrink basis).
+          </li>
+        </ul>
+        <p>자주 사용되는 패턴:</p>
+        <div>
+          <span class="label">flex: 1</span>
+          - 모든 아이템이 같은 크기로 공간을 채웁니다.
+        </div>
+        <div>
+          <span class="label">flex: 0 0 auto</span>
+          - 아이템이 자신의 원래 크기를 유지합니다.
+        </div>
+        <div>
+          <span class="label">flex: 0 0 200px</span>
+          - 아이템이 고정 크기를 유지합니다.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>display:none vs visibility:hidden</title>
+    <style>
+      .row {
+        border: 1px solid #ccc;
+        padding: 8px;
+        margin: 12px 0;
+      }
+      .box {
+        width: 120px;
+        height: 60px;
+        background: #bbdefb;
+        border: 1px solid #64b5f6;
+        display: inline-block;
+      }
+      .none {
+        display: none;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>display: none / visibility: hidden</h1>
+
+    <h2>기준(모두 보임)</h2>
+    <div class="row">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+    </div>
+
+    <h2>display:none (요소 자체가 제거 → 공간도 사라짐)</h2>
+    <div class="row">
+      <div class="box">A</div>
+      <div class="box none">B</div>
+      <div class="box">C</div>
+    </div>
+
+    <h2>visibility:hidden (보이지 않지만 공간은 남음)</h2>
+    <div class="row">
+      <div class="box">A</div>
+      <div class="box hidden">B</div>
+      <div class="box">C</div>
+    </div>
+  </body>
+</html>

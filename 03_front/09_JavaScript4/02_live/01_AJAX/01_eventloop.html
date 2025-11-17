@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>EventLoop</h1>
+  <script>
+    
+    // 순서대로 출력해보기
+    // Hi
+    // a
+    // b
+    // c
+    // Bye
+    // console.log("Hi")
+    // console.log("a")
+    // console.log("b")
+    // console.log("c")
+    // console.log("Bye")
+
+
+    
+    // 코드를 작성하세요. (setTimeout() 활용)
+
+    console.log("Hi") 
+
+    setTimeout(function(){
+      console.log("Bye")
+    }, 4000)
+    setTimeout(function(){
+      console.log("b")
+    }, 2000)
+    setTimeout(function(){
+      console.log("c")
+    }, 3000)
+    setTimeout(function(){
+      console.log("a")
+    }, 1000)
+
+    // 배경색 바꾸기 코드를 작성하세요. (setInterval() 활용)
+    setInterval(() => {
+      let bg = document.body.style.backgroundColor
+      if(bg === 'red')
+        document.body.style.backgroundColor = "blue"
+      else{
+        document.body.style.backgroundColor = "red"
+      }
+    }, 1000);
+
+    
+
+  </script>
+</body>
+</html>

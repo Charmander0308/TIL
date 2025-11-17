@@ -1,0 +1,9 @@
+package com.ssafy.mvc.config;
+
+import org.springframework.context.annotation.Configuration;
+
+//설정파일을 만들자
+@Configuration
+public class FilterConfig {
+	
+}

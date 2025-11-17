@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>MyPage</title>
+</head>
+
+<body>
+  <!-- 나를 소개하는 페이지를 생성해보자 (아래의 화면은 예시)
+       나의 프로젝트 소개 페이지로 링크를 작성해보자
+       나의 이미지를 넣어 소개해보자
+       나의 성적을 표로 만들어 넣어보자
+       나에게 문의를 할 수 있는 설문지를 만들어 넣어보자
+       (다양한 기능을 추가하여 보자) -->
+
+  <div>
+    <h2>🖐️안녕하세요. 저는 양띵균 입니다.</h2>
+
+    <!-- 프로젝트 링크를 작성해보자. lab.ssafy.com -->
+    <p>
+      나의 프로젝트가 궁금하다면....
+      <a target="_blank" href="https://lab.ssafy.com/yumyumcoach">YumYumCoach 프로젝트 바로가기</a>
+    </p>
+
+    <!-- 사진/나를 소개를 해보자 -->
+    <main>
+      <div>
+        <img src="../assets/img/delilah.png" width="200" title="강아지" alt="양띵균사진">
+      </div>
+      <div>
+        <h3>나를 한줄로 소개한다면</h3>
+        <p>
+          저는 SSAFY 강의를 하고 있는 양명균이빈다.
+        </p>
+      </div>
+    </main>
+
+    <!-- 성적표를 작성을 해보자 -->
+    <section>
+      <h3>성적표</h3>
+      <table border="1">
+        <caption>과목평가/월말평가/평균/과락</caption>
+        <thead>
+          <tr>
+            <th>종류</th>
+            <th>회차</th>
+            <th>과목</th>
+            <th>점수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 과목평가 점수 입력 -->
+          <tr>
+            <td rowspan="4">과목평가</td>
+            <td>1회차</td>
+            <td>Java</td>
+            <td>90</td>
+          </tr>
+          <tr>
+            <td>2회차</td>
+            <td>알고리즘기본</td>
+            <td>60</td>
+          </tr>
+          <tr>
+            <td>3회차</td>
+            <td>일타싸피</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>4회차</td>
+            <td>Web(Front)</td>
+            <td>0</td>
+          </tr>
+           <!-- 과목평가 점수 입력 -->
+          <tr>
+            <td rowspan="2">월말평가</td>
+            <td>1회차</td>
+            <td>Java</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>2회차</td>
+            <td>알고리즘기본</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">전체평균</td>
+            <td>70</td>
+          </tr>
+          <tr>
+            <td colspan="3">전체과락</td>
+            <td>2</td>
+          </tr>
+        </tfoot>
+
+      </table>
+
+    </section>
+
+
+    <!-- 설문지 만들기 -->
+    <section>
+      <h3>문의하기</h3>
+      <form action="" method="POST">
+        <div>
+          <label>이름</label>
+          <input type="text" name="email" placeholder="이름을 입력해주세요">
+        </div>
+        <div>
+          <label>이메일</label>
+          <input type="email" name="email" placeholder="ssafy@ssafy.com">
+        </div>
+        <!-- 문의주제(카테고리) -->
+         <div>
+           <label>문의 주제</label>
+           <select name="category">
+            <option>강의 관련</option>
+            <option value="">학습 관련</option>
+            <option vlaue="">프로젝트 문의</option>
+           </select>
+         </div>
+
+         <div>
+           <label for="">메시지</label>
+           <textarea placeholder="문의 내용을 작성해주세요"></textarea>
+         </div>
+         <div>
+          <input type="submit">
+          <input type="reset">
+         </div>
+
+
+
+
+      </form>
+    </section>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+</body>
+
+</html>

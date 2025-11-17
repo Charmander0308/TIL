@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>04 margin/padding shorthand</title>
+    <style>
+      .row {
+        display: flex;
+        gap: 12px;
+        margin: 12px 0;
+      }
+      .box {
+        width: 120px;
+        height: 80px;
+        border: 1px solid #333;
+        background: #f4faff;
+      }
+      .m1 {
+        margin: 10px;
+      }
+      .m2 {
+        margin: 10px 20px;
+      }
+      .m3 {
+        margin: 10px 20px 30px;
+      }
+      .m4 {
+        margin: 10px 20px 30px 40px;
+      }
+      .p1 {
+        padding: 10px;
+      }
+      .p2 {
+        padding: 10px 20px;
+      }
+      .p3 {
+        padding: 10px 20px 30px;
+      }
+      .p4 {
+        padding: 10px 20px 30px 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>단축 속성(시계방향: top → right → bottom → left)</h1>
+
+    <h2>margin</h2>
+    <div class="row">
+      <div class="box m1">10</div>
+      <div class="box m2">10 20</div>
+      <div class="box m3">10 20 30</div>
+      <div class="box m4">10 20 30 40</div>
+    </div>
+
+    <h2>padding</h2>
+    <div class="row">
+      <div class="box p1">10</div>
+      <div class="box p2">10 20</div>
+      <div class="box p3">10 20 30</div>
+      <div class="box p4">10 20 30 40</div>
+    </div>
+  </body>
+</html>

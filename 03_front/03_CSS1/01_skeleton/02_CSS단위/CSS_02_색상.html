@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>단위_02_색상</title>
+</head>
+<body>
+  <h1>CSS 색상 테스트 (named · hex · rgb · hsl · rgba · hsla)</h1>
+
+  <div style="background:#eee;">
+
+    <table border="1">
+      <tr>
+        <th>CSS 값</th>
+        <th>텍스트 색 (color)</th>
+        <th>배경색 (background-color)</th>
+      </tr>
+
+      <!-- 1) 색상 이름 -->
+      <tr>
+        <td><code>black</code></td>
+        <td style="color:black;">The quick brown fox</td>
+        <td><div style="width:160px; height:24px; background:black;"></div></td>
+      </tr>
+
+      <!-- 2) HEX (짧은 표기) -->
+      <tr>
+        <td><code>#000</code></td>
+        <td style="color:#000;">The quick brown fox</td>
+        <td><div style="width:160px; height:24px; background:#000;"></div></td>
+      </tr>
+
+      <!-- 3) HEX (긴 표기) -->
+      <tr>
+        <td><code>#ffffff</code></td>
+        <td style="color:#ffffff; background:#000000;">The quick brown fox</td>
+        <td><div style="width:160px; height:24px; background:#ffffff;"></div></td>
+      </tr>
+
+      <!-- 4) RGB -->
+      <tr>
+        <td><code>rgb(255, 0, 0)</code></td>
+        <td style="color:rgb(255,0,0);">The quick brown fox</td>
+        <td><div style="width:160px; height:24px; background:rgb(255,0,0);"></div></td>
+      </tr>
+
+      <!-- 5) HSL (진한 초록) -->
+      <tr>
+        <td><code>hsl(120, 100%, 50%)</code></td>
+        <td style="color:hsl(120,100%,50%);">The quick brown fox</td>
+        <td><div style="width:160px; height:24px; background:hsl(120,100%,50%);"></div></td>
+      </tr>
+
+      <!-- 6) RGBA (투명도 0.5) -->
+      <tr>
+        <td><code>rgba(0, 0, 255, 0.5)</code></td>
+        <td style="color:rgba(0,0,255,.5);">The quick brown fox</td>
+        <td><div style="width:160px; height:24px; background:rgba(0,0,255,.5);"></div></td>
+      </tr>
+
+      <!-- 7) HSLA (투명도 0.5) -->
+      <tr>
+        <td><code>hsla(120, 100%, 50%, 0.5)</code></td>
+        <td style="color:hsla(120,100%,50%,.5);">The quick brown fox</td>
+        <td><div style="width:160px; height:24px; background:hsla(120,100%,50%,.5);"></div></td>
+      </tr>
+    </table>
+
+  </div>
+</body>
+</html>

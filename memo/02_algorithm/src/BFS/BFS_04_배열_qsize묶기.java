@@ -1,0 +1,102 @@
+package BFS;
+
+import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class BFS_04_배열_qsize묶기 {
+	static class Pos {
+		int r, c;
+
+		public Pos(int r, int c) {
+			this.r = r;
+			this.c = c;
+		}
+
+		@Override
+		public String toString() {
+			return "Pos [r=" + r + ", c=" + c + "]";
+		}
+		
+	}
+	
+	static int N;	//N*N 크기의 2차원 배열이 주어진다.
+	static int[][] map;	//2차원 배열
+	static boolean[][] visited;
+	
+	//4방향 탐색(상하좌우)
+	static int[] dr = {-1,1,0,0};
+	static int[] dc = {0,0,-1,1};
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(input);
+		N = sc.nextInt();
+		map = new int[N][N];
+		visited = new boolean[N][N];
+		
+		for(int i=0; i<N; i++) {
+			for(int j=0; j<N; j++) {
+				map[i][j] = sc.nextInt();
+			}
+		}//미로 입력 완료!
+		
+		//문제에서 출발지, 도착지를 다음과 같이 주었다고 가정!
+		//(0,0) -> (N-1, N-1) 이동!
+		System.out.println(bfs(0, 0));
+	}
+
+	static int bfs(int r, int c) {
+		//큐에 좌표의 정보를 저장
+		//1. 1차원 배열
+		//2. 클래스를 정의
+		Queue<Pos> q = new ArrayDeque<>();
+		
+		//시작정점을 넣어줘잉!
+		int dist = 0;	//시작점의 레벨 혹은 길이
+		q.add(new Pos(r, c));
+		visited[r][c] = true;
+		
+		while(!q.isEmpty()) {
+			int size = q.size();
+			
+			for(int s=0; s<size; s++) {
+				Pos curr = q.poll();	//하나의 좌표를 꺼내라!
+				
+				//꺼냈을 때 (도착지점이라면?)
+				if(curr.r == N-1 && curr.c == N-1) {
+					return dist;
+				}
+				
+				//4방향 탐색. 넣을 수 있으면 넣어!
+				for(int i=0; i<4; i++) {
+					int nr = curr.r + dr[i];
+					int nc = curr.c + dc[i];	//다음 좌표
+					
+					//범위를 벗어났는지 + 벽인지 + 방문했는지 체크
+					if(nr < 0 || nc < 0 || nr >= N || nc >= N || map[nr][nc] == 1 || visited[nr][nc] == true) continue;
+					
+					//다음좌표 갈 수 있으면 넣기
+					visited[nr][nc] = true;
+					q.add(new Pos(nr, nc));
+					
+				}
+			}//size 반복문
+			dist++;
+			
+		}
+		return -1;
+	}
+	
+	
+	static String input = "8\r\n"
+			+ "0 0 1 1 1 1 1 1\r\n"
+			+ "1 0 0 0 0 0 0 1\r\n"
+			+ "1 1 1 0 1 1 1 1\r\n"
+			+ "1 1 1 0 1 1 1 1\r\n"
+			+ "1 0 0 0 0 0 0 1\r\n"
+			+ "1 0 1 1 1 1 1 1\r\n"
+			+ "1 0 0 0 0 0 0 0\r\n"
+			+ "1 1 1 1 1 1 1 0\r\n"
+			+ "";
+}

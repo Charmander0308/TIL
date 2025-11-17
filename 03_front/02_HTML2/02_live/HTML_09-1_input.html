@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>input Tag</title>
+</head>
+
+<body>
+  <!-- input 태그 작성 -->
+  <h1>📌 input 태그 종합 예제</h1>
+
+  <!-- form 태그와 함께 input 사용 -->
+  <form action="" method="GET">
+    <!-- 1. text 입력 -->
+    <label>ID</label>
+    <input type="text" name="id" placeholder="아이디를 입력해주세요" required>
+    <br><br>
+    <!-- 2. password 입력 -->
+    <label>PW</label>
+    <input id="pw" type="password" placeholder="비밀번호 입력" minlength="6" maxlength="12">
+    <br><br>
+
+    <!-- 3. number 입력 -->
+    <label>나이</label>
+    <input type="number" name="age" min="0" max="100" step="5" value="10">
+    <br><br>
+    <!-- 4. email 입력 (@ 체크 해줌)-->
+    <label>email</label>
+    <input type="email">
+    <br><br>
+    <!-- 5. file 업로드 -->
+    <label for="">파일1개</label>
+    <input type="file" multiple accept="image/*">
+    <br><br>
+    <!-- 6. checkbox(다중 선택 가능) -->
+    <div>
+      <span>관심언어</span>
+      <input type="checkbox" name="pl" id="javaId" value="java"><label for="javaId">Java</label>
+      <input type="checkbox" name="pl" id="pythonId" value="python"><label for="pythonId">Python</label>
+      <input type="checkbox" name="pl" id="c++Id" value="c++"><label for="c++Id">C++</label>
+    </div>
+
+    <!-- 7. radio(다중 선택 불가능) -->
+    <div>
+      <span>캠퍼스 선택</span>
+      <label><input type="radio" name="campus" value="su">서울</label>
+      <label><input type="radio" name="campus" value="dj">대전</label>
+      <label><input type="radio" name="campus" value="gj">광주</label>
+      <label><input type="radio" name="campus" value="gm">구미</label>
+      <label><input type="radio" name="campus" value="buk">부울경</label>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- 8. hidden (서버로만 전달, 화면엔 안보임) -->
+    <input type="hidden" value="필쑤!">
+    <!-- 9. submit 버튼 -->
+    <input type="submit">
+    <br><br>
+    <!-- 10. reset 버튼 -->
+    <input type="reset" value="초기화">
+    <br><br>
+    <!-- 11. 일반 버튼 -->
+    <button>Submit 처럼 동작을한다.</button>
+    <br><br>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Emmet 심화</title>
+    <style>
+      section {
+        border: 1px dashed #ccc;
+        padding: 12px;
+        margin: 16px 0;
+      }
+      pre {
+        background: #f6f8fa;
+        padding: 8px;
+        overflow: auto;
+      }
+      small {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Emmet — 심화</h1>
+    <p>
+      <small>그룹, 속성, 폼, 표 등 조금 더 복합적인 축약어 예시입니다.</small>
+    </p>
+
+    <!-- A) 그룹(()) / 위로 올림(^) -->
+    <section>
+      <h2>A) 그룹 ( ( ) ) / 위로 올림 ( ^ )</h2>
+      <pre>Emmet: <strong>(header&gt;nav&gt;ul&gt;li*3&gt;a{링크 $})^footer</strong></pre>
+      <!-- ()로 한 덩어리 생성 후, ^ 로 한 단계 위(부모 레벨)의 형제 추가 -->
+      <header style="border: 1px solid #ddd; padding: 6px; margin-bottom: 6px">
+        <nav>
+          <ul>
+            <li><a href="#">링크 1</a></li>
+            <li><a href="#">링크 2</a></li>
+            <li><a href="#">링크 3</a></li>
+          </ul>
+        </nav>
+      </header>
+      <footer style="border: 1px solid #ddd; padding: 6px">푸터</footer>
+    </section>
+
+    <!-- B) 속성([]) -->
+    <section>
+      <h2>B) 속성 지정 ( [ ] )</h2>
+      <pre>Emmet: <strong>a[href="/about" target="_blank" rel="noopener"]{About}</strong></pre>
+      <a href="/about" target="_blank" rel="noopener">About</a>
+    </section>
+
+    <!-- C) 폼/인풋 스니펫 -->
+    <section>
+      <h2>C) 폼/인풋 스니펫</h2>
+      <pre>Emmet: <strong>form&gt;label[for=name]{이름}+input#name[type=text][placeholder=이름]+br+label[for=agree]{약관동의}+input:checkbox#agree</strong></pre>
+      <!-- input:checkbox 같은 약식 스니펫은 에디터 설정에 따라 동작 -->
+      <form action="#">
+        <label for="name">이름</label>
+        <input id="name" type="text" placeholder="이름" /><br />
+        <label for="agree">약관동의</label>
+        <input id="agree" type="checkbox" />
+      </form>
+    </section>
+
+    <!-- D) 카드 레이아웃 반복 -->
+    <section>
+      <h2>D) 카드 반복 레이아웃</h2>
+      <pre>Emmet: <strong>.card*3&gt;h3{제목 $}+p{간단한 설명}+a.btn[href="#"]{자세히}</strong></pre>
+      <div
+        class="card"
+        style="border: 1px solid #ccc; padding: 8px; margin: 6px 0"
+      >
+        <h3>제목 1</h3>
+        <p>간단한 설명</p>
+        <a class="btn" href="#">자세히</a>
+      </div>
+      <div
+        class="card"
+        style="border: 1px solid #ccc; padding: 8px; margin: 6px 0"
+      >
+        <h3>제목 2</h3>
+        <p>간단한 설명</p>
+        <a class="btn" href="#">자세히</a>
+      </div>
+      <div
+        class="card"
+        style="border: 1px solid #ccc; padding: 8px; margin: 6px 0"
+      >
+        <h3>제목 3</h3>
+        <p>간단한 설명</p>
+        <a class="btn" href="#">자세히</a>
+      </div>
+    </section>
+
+    <!-- E) 이미지/figure -->
+    <section>
+      <h2>E) 이미지 &amp; figure</h2>
+      <pre>Emmet: <strong>img</strong>    /    <strong>figure&gt;img+figcaption{캡션}</strong></pre>
+      <p>
+        <img src="" alt="" /> ← Emmet <code>img</code> 기본 골격 (src/alt 비어
+        있음)
+      </p>
+      <figure>
+        <img src="" alt="" />
+        <figcaption>캡션</figcaption>
+      </figure>
+    </section>
+
+    <!-- F) 표 뼈대 -->
+    <section>
+      <h2>F) 테이블 뼈대</h2>
+      <pre>Emmet: <strong>table&gt;thead&gt;tr&gt;th*3^^tbody&gt;tr*3&gt;td*3</strong></pre>
+      <!-- ^^ : thead의 부모(table)로 올라가서 tbody 추가 -->
+      <table border="1" cellspacing="0" cellpadding="6">
+        <thead>
+          <tr>
+            <th>헤더1</th>
+            <th>헤더2</th>
+            <th>헤더3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1-1</td>
+            <td>1-2</td>
+            <td>1-3</td>
+          </tr>
+          <tr>
+            <td>2-1</td>
+            <td>2-2</td>
+            <td>2-3</td>
+          </tr>
+          <tr>
+            <td>3-1</td>
+            <td>3-2</td>
+            <td>3-3</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- G) lorem 더미 텍스트 -->
+    <section>
+      <h2>G) 더미 텍스트 (lorem)</h2>
+      <pre>Emmet: <strong>p&gt;lorem10</strong></pre>
+      <p>예시: Lorem ipsum dolor sit amet, consectetur.</p>
+    </section>
+
+    <!-- H) 복합: id/class/속성 혼합 -->
+    <section>
+      <h2>H) 복합 예시</h2>
+      <pre>Emmet: <strong>div#app.container[data-role=root]&gt;section#intro.hero&gt;h1{Hello}+p{설명}</strong></pre>
+      <div
+        id="app"
+        class="container"
+        style="border: 1px solid #ddd; padding: 8px"
+      >
+        <section id="intro" class="hero">
+          <h1>Hello</h1>
+          <p>설명</p>
+        </section>
+      </div>
+    </section>
+  </body>
+</html>

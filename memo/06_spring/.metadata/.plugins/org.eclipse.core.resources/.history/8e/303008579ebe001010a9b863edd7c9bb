@@ -1,0 +1,33 @@
+package com.ssafy.mvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.ssafy.mvc.model.dto.User;
+
+@Controller
+public class UserController {
+	
+	@GetMapping("/hello")
+	public String hello() {
+		return "hello";
+	}
+	
+	@GetMapping("/login")
+	public String loginForm() {
+		return "/user/loginForm";	//WEB_INF/views/user/loginForm.jsp
+	}
+	
+	@PostMapping("/login")
+	public String login(@ModelAttribute User user) {
+		//User라고 하는 객체를 하나 만들어서 관리하면 아주 ez하게 처리가 되겠어!
+		//넘겨받은 User를 이용해서 실제로 우리의 회원인지를 체크 -> Service 호출 -> DAO 호출 -> DB
+		
+		//지금 로그인이 되었다! 검증 끝이라고 가정
+		//세션에 저장을 하겠다!
+		
+		return "redirect:hello";
+	}
+}

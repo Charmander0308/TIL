@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dog API</title>
+  </head>
+  <body>
+    <div>
+      <h1>Dog API</h1>
+      <div>
+        <button id="btn1">XMLHttpRequest</button>
+        <button id="btn2">Fetch</button>
+      </div>
+      <div>
+        <img src="" alt="" id="dog-img" />
+      </div>
+    </div>
+    <script>
+      const URL = 'https://dog.ceo/api/breeds/image/random';
+
+      document.querySelector("#btn1").addEventListener('click', ()=>{
+        const xhr = new XMLHttpRequest();
+        // 0, 1, 2, 3, 4
+        xhr.onreadystatechange = function() {
+          if(xhr.readyState == xhr.DONE){
+            // 200 OK
+            if(xhr.status == 200){
+              console.log(JSON.parse(xhr.response)['message'])
+              console.log(JSON.parse(xhr.response).message)
+
+              const imgSrc = JSON.parse(xhr.response).message;
+              const imgTag = document.querySelector('#dog-img')
+              // imgTag.setAttribute('src', imgSrc)
+              imgTag.src =  imgSrc
+            }
+          }
+        }
+
+        xhr.open('GET', URL)
+        xhr.send();
+      })
+
+
+      document.querySelector("#btn2").addEventListener('click', ()=>{
+        fetch(URL)
+        .then((resopnse)=>{
+          // console.log(resopnse.text())
+          // console.log(resopnse.json())
+          return resopnse.json()
+        })
+        .then((imgData)=>{
+          console.log(imgData)
+          document.querySelector("#dog-img").setAttribute('src', imgData.message)
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
+      })
+
+
+    </script>
+  </body>
+</html>

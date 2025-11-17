@@ -1,0 +1,28 @@
+package com.ssafy.jdbc;
+
+import java.util.List;
+
+public class JdbcTest {
+	
+	//1. 드라이버 로드
+	public JdbcTest() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		JdbcTest db = new JdbcTest();
+	}
+
+	
+	//메서드
+//	public List<> selectAll(){
+//		
+//	}
+	
+	
+}

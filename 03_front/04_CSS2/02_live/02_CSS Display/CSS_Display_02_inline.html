@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>display: inline</title>
+    <style>
+      .area {
+        border: 1px solid #ccc;
+        padding: 8px;
+        margin: 12px 0;
+      }
+      .inline {
+        display: inline;
+        background-color: lightblue;
+        border: 1px black solid;
+        padding: 10px
+      }
+      .try {
+        display: inline;
+        background-color: salmon;
+        border: 1px black solid;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>display: inline</h1>
+    <ul>
+      <li>줄바꿈 없이 한 줄 내에 배치</li>
+      <li>컨텐트만큼 가로폭을 가짐</li>
+      <li>
+        <code>width</code>/<code>height</code>/<code>margin-top/bottom</code>
+        직접 지정 불가
+      </li>
+      <li>상하 여백은 보통 <code>line-height</code>로 조절</li>
+    </ul>
+
+    <div class="area">
+      <span class="inline">span A</span>
+      <span class="inline">span B</span>
+      <a class="inline" href="#">링크</a>
+    </div>
+
+    <h2>width/height 시도 (효과 없음)</h2>
+    <div class="area">
+      <span class="try"
+        >width/height 지정을 시도했지만 inline이라 적용되지 않음</span
+      >
+    </div>
+    <p>
+      대표 태그: <code>span</code>, <code>a</code>, <code>input</code>,
+      <code>label</code>, <code>b</code>, <code>em</code> …
+    </p>
+  </body>
+</html>

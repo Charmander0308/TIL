@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>02 Box Parts (content/padding/border/margin)</title>
+    <style>
+      .stage {
+        background: #f0f0f0;
+        padding: 20px;
+      }
+      .box {
+        margin: 20px;
+        border: 2px solid #888;
+        padding: 20px;
+        background: #e6f4ea;
+      }
+      .content {
+        background: #cde5ff;
+        padding: 8px;
+      }
+      /* 주의: margin 바깥은 배경색을 줄 수 없음 → 주변(stage) 배경으로 보임 */
+    </style>
+  </head>
+  <body>
+    <h1>Box의 영역</h1>
+    <div class="stage">
+      <!-- margin(20px) → border(2px) → padding(20px) → content -->
+      <div class="box">
+        <div class="content">content 영역 (실제 내용)</div>
+      </div>
+    </div>
+  </body>
+</html>

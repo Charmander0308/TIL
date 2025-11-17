@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>03 Margin 기본 + Collapse</title>
+    <style>
+      .row {
+        margin: 10px;
+        border: 1px solid gray;
+        padding: 10px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        padding: 20px;
+      }
+      .m1 {
+        margin-top: 10px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+        margin-left: 40px;
+      }
+      .A {
+        margin-bottom: 30px;
+      }
+      .B {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>margin 기본</h1>
+
+    <div class="row">
+      <p>개별 지정 (top/right/bottom/left)</p>
+      <div class="box m1"></div>
+    </div>
+
+    <div class="row">
+      <p>
+        Margin Collapse (인접한 블록의 수직 마진이 겹칠 때, 더 큰 값으로 상쇄)
+      </p>
+      <div class="box A">A (margin-bottom: 30px)</div>
+      <div class="box B">B (margin-top: 50px)</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>01 Normal Flow (Inline / Block)</title>
+    <style>
+      .inline {
+        background: #ffd;
+        padding: 4px;
+      }
+      .block {
+        background: #def;
+        padding: 6px;
+        margin: 4px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Normal Flow</h1>
+
+    <h2>Inline Direction →</h2>
+    <div>
+      <span class="inline">안</span>
+      <span class="inline">녕</span>
+      <span class="inline">하</span>
+      <span class="inline">세</span>
+      <span class="inline">요</span>
+      <span> (왼→오)</span>
+    </div>
+
+    <h2>Block Direction ↓</h2>
+    <div>
+      <div class="block">첫 줄(위)</div>
+      <div class="block">둘째 줄</div>
+      <div class="block">셋째 줄(아래)</div>
+    </div>
+  </body>
+</html>

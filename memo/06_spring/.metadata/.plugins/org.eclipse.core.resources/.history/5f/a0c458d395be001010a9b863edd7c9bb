@@ -1,0 +1,15 @@
+package com.ssafy.mvc.config;
+
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+//설정파일을 만들자
+@Configuration
+public class FilterConfig {
+	
+	@Bean
+	public FilterRegistrationBean<MyFilter> myFilter() {
+		FilterRegistrationBean<MyFilter> filterRegistrationBean = new FilterRegistrationBean<>();
+	}
+}

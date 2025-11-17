@@ -1,0 +1,58 @@
+package com.ssafy.board.test;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.ssafy.board.config.MyBatisConfig;
+import com.ssafy.board.model.dao.BoardDao;
+import com.ssafy.board.model.dto.Board;
+
+public class Test {
+	public static void main(String[] args) {
+//		MyBatisConfig config = new MyBatisConfig();
+		
+		//쿼리문을 날리기 위해서
+		SqlSession session = MyBatisConfig.getFactory().openSession(true);
+//		List<Board> list =  session.selectList("com.ssafy.~~~");
+
+		//Dao 구현체를 만들어버림
+		BoardDao dao = session.getMapper(BoardDao.class);
+		
+		//전체게시글조회
+//		for(Board board : dao.selectAll()) {
+//			System.out.println(board);
+//		}
+		
+		session.close();
+		
+		
+		//상세게시글조회
+		System.out.println(dao.selectOne(1));
+		
+		
+		//게시글등록
+		Board tmp = new Board("오늘 점심 무슨 코스먹을거야?", "양띵균", "A코스 먹을래!");
+		dao.insertBoard(tmp);
+		System.out.println(dao.selectOne(3));
+		
+		//게시글수정
+		Board tmp2 = dao.selectOne(3);
+		tmp2.setContent("아니 사실은 B코스 먹을건데?");
+		dao.updateBoard(tmp2);
+		
+		System.out.println(dao.selectOne(3));
+		
+		
+		//게시글삭제
+		dao.deleteBoard(1);
+		
+		System.out.println(dao.selectOne(1));
+		
+		session.close();
+		
+		
+		
+		
+	}
+}

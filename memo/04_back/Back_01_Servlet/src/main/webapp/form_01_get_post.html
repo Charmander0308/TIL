@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input_text</title>
+</head>
+<body>
+	<h2>GET Form</h2>
+	<!-- action : 그냥 시작하면 주소창에 마지막 / 기준으로 내용만 바뀜 -->
+	<form action="ServletParameter" method="GET">
+		<input type="text" name="text"> 
+		<input type="submit">
+	</form>
+
+	<h2>POST Form</h2>
+	<!-- action : / 시작하면 포트번호 다음부터 바뀜 -->
+	<form action="ServletParameter" method="POST">
+		<input type="text" name="text"> 
+		<input type="submit">
+	</form>
+</body>
+</html>

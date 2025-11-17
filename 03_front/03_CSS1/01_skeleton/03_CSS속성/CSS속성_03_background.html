@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 배경 속성</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+      /* reset css */
+      * {
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+
+      body {
+        margin: 1rem;
+      }
+
+      h6,
+      h5,
+      h4,
+      h3,
+      h2,
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      /* title style */
+      h3 {
+        text-align: center;
+      }
+
+      hr {
+        width: 60%;
+      }
+
+      .example_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25%, auto));
+        margin-bottom: 3rem;
+      }
+
+      .example {
+        justify-self: center;
+      }
+
+      .bg_container {
+        width: 220px;
+        height: 150px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .bg_item {
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 4px;
+      }
+
+      /* background-color 예시 */
+      .bg_color_red {
+        background-color: #FF6B6B;
+      }
+
+      .bg_color_green {
+        background-color: #4ECDC4;
+      }
+
+      .bg_color_blue {
+        background-color: #6C63FF;
+      }
+
+      .bg_color_gradient {
+        background-color: #f8f9fa;
+        background-image: linear-gradient(to bottom right, #FF6B6B, #4ECDC4);
+      }
+
+      /* background-image 예시 */
+      .bg_image_url {
+        background-image: url('https://placehold.co/600x400');
+      }
+
+      .bg_image_linear_gradient {
+        background-image: linear-gradient(to right, #FF6B6B, #4ECDC4);
+      }
+
+      .bg_image_radial_gradient {
+        background-image: radial-gradient(circle, #FF6B6B, #4ECDC4);
+      }
+
+      .bg_image_multiple {
+        background-image: 
+          url('https://placehold.co/600x400'),
+          linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+      }
+
+      /* background-attachment 예시 */
+      .bg_attachment_scroll {
+        background-image: url('https://placehold.co/600x400');
+        background-attachment: scroll;
+        overflow: auto;
+      }
+
+      .bg_attachment_fixed {
+        background-image: url('https://placehold.co/600x400');
+        background-attachment: fixed;
+        overflow: auto;
+      }
+
+      .bg_attachment_local {
+        background-image: url('https://placehold.co/600x400');
+        background-attachment: local;
+        overflow: auto;
+      }
+
+      /* background-repeat 예시 */
+      .bg_repeat {
+        background-image: url('https://placehold.co/100x100');
+        background-repeat: repeat;
+      }
+
+      .bg_repeat_x {
+        background-image: url('https://placehold.co/100x100');
+        background-repeat: repeat-x;
+      }
+
+      .bg_repeat_y {
+        background-image: url('https://placehold.co/100x100');
+        background-repeat: repeat-y;
+      }
+
+      .bg_no_repeat {
+        background-image: url('https://placehold.co/100x100');
+        background-repeat: no-repeat;
+      }
+
+      /* background-position 예시 */
+      .bg_position_center {
+        background-image: url('https://placehold.co/100x100');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .bg_position_top_right {
+        background-image: url('https://placehold.co/100x100');
+        background-repeat: no-repeat;
+        background-position: top right;
+      }
+
+      .bg_position_bottom_left {
+        background-image: url('https://placehold.co/100x100');
+        background-repeat: no-repeat;
+        background-position: bottom left;
+      }
+
+      .bg_position_percentage {
+        background-image: url('https://placehold.co/100x100');
+        background-repeat: no-repeat;
+        background-position: 75% 25%;
+      }
+
+      /* background-size 예시 */
+      .bg_size_auto {
+        background-image: url('https://placehold.co/100x100');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+      }
+
+      .bg_size_cover {
+        background-image: url('https://placehold.co/600x400');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .bg_size_contain {
+        background-image: url('https://placehold.co/600x400');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .bg_size_custom {
+        background-image: url('https://placehold.co/600x400');
+        background-repeat: no-repeat;
+        background-size: 50% 75%;
+      }
+
+      /* background-clip 예시 */
+      .bg_content_box {
+        background-color: #FF6B6B;
+        background-clip: content-box;
+        padding: 20px;
+      }
+
+      .bg_padding_box {
+        background-color: #4ECDC4;
+        background-clip: padding-box;
+        padding: 20px;
+        border: 10px dotted #333;
+      }
+
+      .bg_border_box {
+        background-color: #6C63FF;
+        background-clip: border-box;
+        padding: 20px;
+        border: 10px dotted #333;
+      }
+
+      /* text-fill-color와 관련된 예시 */
+      .bg_text {
+        background-image: url('https://placehold.co/600x400');
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 32px;
+        font-weight: bold;
+        padding: 0;
+      }
+
+      /* background 축약형 예시 */
+      .bg_shorthand_1 {
+        background: #FF6B6B url('https://placehold.co/100x100') no-repeat center / cover;
+      }
+
+      .bg_shorthand_2 {
+        background: linear-gradient(to right, #FF6B6B, #4ECDC4) fixed;
+      }
+
+      .bg_shorthand_3 {
+        background: url('https://placehold.co/100x100') repeat-x bottom / 50px 50px;
+      }
+
+      .bg_shorthand_4 {
+        background: #6C63FF;
+        border-radius: 50%;
+      }
+
+      /* 스크롤을 위한 콘텐츠 */
+      .scroll_content {
+        height: 300px;
+        overflow-y: auto;
+      }
+
+      .scroll_content p {
+        margin: 0;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h2>CSS 배경 속성 가이드</h2>
+      <p>웹 디자인에서 요소의 배경을 스타일링하기 위한 다양한 CSS 배경 속성들을 알아봅니다.</p>
+    </div>
+
+    <h3>background-color</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">요소의 배경색을 지정합니다. 색상 이름, HEX, RGB, RGBA, HSL, HSLA 등의 다양한 색상 값을 사용할 수 있습니다. 그라데이션은 background-image 속성을 사용하는 것이 더 일반적입니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) 빨간색 (#FF6B6B)</p>
+        <div class="bg_container bg_color_red">
+          <div class="bg_item">빨간색 배경</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) 녹색 (#4ECDC4)</p>
+        <div class="bg_container bg_color_green">
+          <div class="bg_item">녹색 배경</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) 파란색 (#6C63FF)</p>
+        <div class="bg_container bg_color_blue">
+          <div class="bg_item">파란색 배경</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) 그라데이션</p>
+        <div class="bg_container bg_color_gradient">
+          <div class="bg_item">그라데이션 배경</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>background-image</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">요소의 배경 이미지를 지정합니다. URL을 통해 외부 이미지를 사용하거나 그라데이션 함수를 통해 그라데이션 배경을 생성할 수 있습니다. 여러 이미지를 쉼표로 구분하여 다중 배경도 가능합니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) URL 이미지</p>
+        <div class="bg_container bg_image_url">
+          <div class="bg_item">URL 이미지 배경</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) 선형 그라데이션</p>
+        <div class="bg_container bg_image_linear_gradient">
+          <div class="bg_item">선형 그라데이션</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) 방사형 그라데이션</p>
+        <div class="bg_container bg_image_radial_gradient">
+          <div class="bg_item">방사형 그라데이션</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) 다중 배경</p>
+        <div class="bg_container bg_image_multiple">
+          <div class="bg_item">다중 배경 이미지</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>background-attachment</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">배경 이미지의 스크롤 동작을 지정합니다. 스크롤 시 배경이 함께 스크롤되거나(scroll), 뷰포트에 고정되거나(fixed), 요소 내에서 스크롤(local)될 수 있습니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) scroll (기본값)</p>
+        <div class="bg_container bg_attachment_scroll scroll_content">
+          <div class="bg_item">scroll</div>
+          <p>스크롤 해보세요</p>
+          <p>내용이 스크롤되면</p>
+          <p>배경은 요소와 함께</p>
+          <p>스크롤됩니다</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) fixed</p>
+        <div class="bg_container bg_attachment_fixed scroll_content">
+          <div class="bg_item">fixed</div>
+          <p>스크롤 해보세요</p>
+          <p>내용이 스크롤되어도</p>
+          <p>배경은 뷰포트에</p>
+          <p>고정됩니다</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) local</p>
+        <div class="bg_container bg_attachment_local scroll_content">
+          <div class="bg_item">local</div>
+          <p>스크롤 해보세요</p>
+          <p>내용과 배경이</p>
+          <p>함께 스크롤됩니다</p>
+          <p>(요소 내에서)</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>background-repeat</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">배경 이미지의 반복 방식을 지정합니다. 가로, 세로로 반복하거나, 둘 중 하나의 방향으로만 반복하거나, 반복하지 않을 수 있습니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) repeat (기본값)</p>
+        <div class="bg_container bg_repeat">
+          <div class="bg_item">repeat</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) repeat-x</p>
+        <div class="bg_container bg_repeat_x">
+          <div class="bg_item">repeat-x</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) repeat-y</p>
+        <div class="bg_container bg_repeat_y">
+          <div class="bg_item">repeat-y</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) no-repeat</p>
+        <div class="bg_container bg_no_repeat">
+          <div class="bg_item">no-repeat</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>background-position</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">배경 이미지의 초기 위치를 지정합니다. 키워드(top, right, bottom, left, center), 길이 값(px, em), 또는 백분율(%)을 사용하여 위치를 지정할 수 있습니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) center</p>
+        <div class="bg_container bg_position_center">
+          <div class="bg_item">center</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) top right</p>
+        <div class="bg_container bg_position_top_right">
+          <div class="bg_item">top right</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) bottom left</p>
+        <div class="bg_container bg_position_bottom_left">
+          <div class="bg_item">bottom left</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) 75% 25%</p>
+        <div class="bg_container bg_position_percentage">
+          <div class="bg_item">75% 25%</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>background-size</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">배경 이미지의 크기를 지정합니다. auto(원본 크기), cover(요소를 완전히 덮음), contain(요소 내에 이미지가 모두 표시되도록), 또는 직접 크기 값을 지정할 수 있습니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) auto (기본값)</p>
+        <div class="bg_container bg_size_auto">
+          <div class="bg_item">auto</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) cover</p>
+        <div class="bg_container bg_size_cover">
+          <div class="bg_item">cover</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) contain</p>
+        <div class="bg_container bg_size_contain">
+          <div class="bg_item">contain</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) 50% 75%</p>
+        <div class="bg_container bg_size_custom">
+          <div class="bg_item">50% 75%</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>background-clip</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">배경이 요소의 어느 영역까지 확장될지 지정합니다. border-box(테두리까지), padding-box(패딩까지), content-box(내용 영역만), text(텍스트만)의 옵션이 있습니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) border-box (기본값)</p>
+        <div class="bg_container bg_border_box">
+          <div class="bg_item">border-box</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) padding-box</p>
+        <div class="bg_container bg_padding_box">
+          <div class="bg_item">padding-box</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) content-box</p>
+        <div class="bg_container bg_content_box">
+          <div class="bg_item">content-box</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) text</p>
+        <div class="bg_container">
+          <div class="bg_text">텍스트</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>background (축약형)</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">여러 배경 속성을 한 번에 설정하는 축약형 속성입니다. 색상, 이미지, 위치, 반복, 첨부 방식, 크기 등을 한 줄로 지정할 수 있습니다. 순서는 자유롭지만 background-size는 position 뒤에 '/'로 구분해야 합니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) 색상, 이미지, 반복, 위치, 크기</p>
+        <div class="bg_container bg_shorthand_1">
+          <div class="bg_item">축약형 1</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) 그라데이션, 첨부</p>
+        <div class="bg_container bg_shorthand_2">
+          <div class="bg_item">축약형 2</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) 이미지, 반복, 위치, 크기</p>
+        <div class="bg_container bg_shorthand_3">
+          <div class="bg_item">축약형 3</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) 색상만 (원형)</p>
+        <div class="bg_container bg_shorthand_4">
+          <div class="bg_item">축약형 4</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

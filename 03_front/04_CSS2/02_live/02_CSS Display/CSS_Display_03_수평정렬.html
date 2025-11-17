@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>display에 따른 수평 정렬</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #9fa8da;
+    }
+
+    .wrap {
+      border: 1px solid #ccc;
+      padding: 8px;
+      margin: 14px;
+    }
+
+    .left .box {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .right .box {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .center .box {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>수평 정렬</h1>
+  <p>
+    인라인은 <b>부모의</b> <code>text-align</code>으로, 블록은
+    <code>margin</code>으로 정렬.
+  </p>
+
+  <h2>블록 박스: margin으로 정렬</h2>
+  <div class="wrap left">
+    <div class="box"></div>
+  </div>
+  <div class="wrap right">
+    <div class="box"></div>
+  </div>
+  <div class="wrap center">
+    <div class="box"></div>
+  </div>
+
+  <h2>인라인 콘텐츠: text-align으로 정렬</h2>
+  <div class="wrap" style="text-align: left;">text-align: left</div>
+  <div class="wrap" style="text-align: right;">text-align: right</div>
+  <div class="wrap" style="text-align: center;">text-align: center</div>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+{
+  "meals": [
+    {
+      "id": 1,
+      "date": "2025-05-15",
+      "type": "아침",
+      "foods": [
+        {
+          "name": "현미밥",
+          "calories": 300,
+          "protein": 6,
+          "carbs": 65,
+          "fat": 1
+        },
+        {
+          "name": "계란찜",
+          "calories": 150,
+          "protein": 12,
+          "carbs": 1,
+          "fat": 10
+        },
+        {
+          "name": "시금치나물",
+          "calories": 50,
+          "protein": 3,
+          "carbs": 8,
+          "fat": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "date": "2024-03-15",
+      "type": "점심",
+      "foods": [
+        {
+          "name": "닭가슴살 샐러드",
+          "calories": 350,
+          "protein": 35,
+          "carbs": 15,
+          "fat": 12
+        },
+        {
+          "name": "고구마",
+          "calories": 200,
+          "protein": 2,
+          "carbs": 45,
+          "fat": 0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "date": "2024-03-15",
+      "type": "저녁",
+      "foods": [
+        {
+          "name": "연어 구이",
+          "calories": 400,
+          "protein": 40,
+          "carbs": 0,
+          "fat": 25
+        },
+        {
+          "name": "브로콜리",
+          "calories": 50,
+          "protein": 3,
+          "carbs": 10,
+          "fat": 0
+        },
+        {
+          "name": "현미밥",
+          "calories": 300,
+          "protein": 6,
+          "carbs": 65,
+          "fat": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "date": "2024-03-14",
+      "type": "아침",
+      "foods": [
+        {
+          "name": "오트밀",
+          "calories": 250,
+          "protein": 8,
+          "carbs": 45,
+          "fat": 5
+        },
+        {
+          "name": "바나나",
+          "calories": 100,
+          "protein": 1,
+          "carbs": 25,
+          "fat": 0
+        },
+        {
+          "name": "그릭요거트",
+          "calories": 150,
+          "protein": 15,
+          "carbs": 8,
+          "fat": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "date": "2024-03-14",
+      "type": "점심",
+      "foods": [
+        {
+          "name": "비빔밥",
+          "calories": 550,
+          "protein": 20,
+          "carbs": 90,
+          "fat": 15
+        },
+        {
+          "name": "미역국",
+          "calories": 100,
+          "protein": 5,
+          "carbs": 10,
+          "fat": 3
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "date": "2024-03-14",
+      "type": "저녁",
+      "foods": [
+        {
+          "name": "두부조림",
+          "calories": 200,
+          "protein": 15,
+          "carbs": 5,
+          "fat": 12
+        },
+        {
+          "name": "잡곡밥",
+          "calories": 300,
+          "protein": 6,
+          "carbs": 65,
+          "fat": 1
+        },
+        {
+          "name": "콩나물무침",
+          "calories": 50,
+          "protein": 3,
+          "carbs": 8,
+          "fat": 0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "date": "2024-03-13",
+      "type": "아침",
+      "foods": [
+        {
+          "name": "토스트",
+          "calories": 200,
+          "protein": 5,
+          "carbs": 35,
+          "fat": 5
+        },
+        {
+          "name": "스크램블 에그",
+          "calories": 180,
+          "protein": 12,
+          "carbs": 1,
+          "fat": 13
+        },
+        {
+          "name": "아보카도",
+          "calories": 160,
+          "protein": 2,
+          "carbs": 8,
+          "fat": 15
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "date": "2024-03-13",
+      "type": "점심",
+      "foods": [
+        {
+          "name": "샐러드",
+          "calories": 300,
+          "protein": 20,
+          "carbs": 25,
+          "fat": 15
+        },
+        {
+          "name": "통밀빵",
+          "calories": 150,
+          "protein": 5,
+          "carbs": 25,
+          "fat": 3
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "date": "2024-03-13",
+      "type": "저녁",
+      "foods": [
+        {
+          "name": "불고기",
+          "calories": 450,
+          "protein": 35,
+          "carbs": 30,
+          "fat": 20
+        },
+        {
+          "name": "쌀밥",
+          "calories": 300,
+          "protein": 6,
+          "carbs": 65,
+          "fat": 1
+        },
+        {
+          "name": "김치",
+          "calories": 50,
+          "protein": 2,
+          "carbs": 8,
+          "fat": 0
+        }
+      ]
+    }
+  ],
+  "nutritionGoals": {
+    "dailyCalories": 2000,
+    "protein": 100,
+    "carbs": 250,
+    "fat": 65
+  },
+  "weeklyStats": {
+    "startDate": "2024-03-15",
+    "endDate": "2024-03-22",
+    "totalCalories": 14000,
+    "totalProtein": 700,
+    "totalCarbs": 1750,
+    "totalFat": 455,
+    "averageCalories": 2000,
+    "averageProtein": 100,
+    "averageCarbs": 250,
+    "averageFat": 65
+  }
+} 

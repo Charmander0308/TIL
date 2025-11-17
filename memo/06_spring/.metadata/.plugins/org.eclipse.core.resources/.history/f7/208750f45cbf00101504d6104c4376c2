@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>index.html메인</h2>
+	
+	<!-- 단일파일업로드 -->
+	<a href="/singleFileForm"></a>
+</body>
+</html>

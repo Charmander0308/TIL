@@ -1,0 +1,4 @@
+spring.application.name=Spring_05_Interceptor
+
+#JSP path
+spring.mvc.view.prefix=/WEB-INF/views/

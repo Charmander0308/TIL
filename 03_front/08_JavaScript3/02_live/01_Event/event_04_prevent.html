@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>prevent</title>  
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <div>
+    <h1>Don't Copy My Text</h1>
+  </div>
+  <script>
+    // 코드를 작성하시오.
+    const h1Tag = document.querySelector('h1')
+
+    h1Tag.addEventListener('copy', function(event){
+      event.preventDefault()
+      alert('카피하지마')
+    })
+  </script>
+</body>
+</html>

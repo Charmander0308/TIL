@@ -1,0 +1,9 @@
+package com.ssafy.board.test;
+
+import com.ssafy.board.config.MyBatisConfig;
+
+public class Test {
+	public static void main(String[] args) {
+		MyBatisConfig config = new MyBatisConfig();
+	}
+}

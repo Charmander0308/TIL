@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>button_input</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <input type="text" placeholder="내용을 입력하세요">
+  <button>클릭</button>
+  <h1></h1>
+  <script>
+    // 코드를 작성하시오.
+    document.querySelector("input").addEventListener('input', function(){
+      document.querySelector("h1").textContent = event.target.value
+    })
+
+    document.querySelector("button").addEventListener('click', function(){
+      const h1Tag = document.querySelector('h1')
+      h1Tag.classList.add('blue')
+    })
+    //추가 심화 -> 버튼을 클릭할때마다 blue -> black 왔다갔다 하기로 해보자
+    //토글
+
+  </script>
+</body>
+</html>

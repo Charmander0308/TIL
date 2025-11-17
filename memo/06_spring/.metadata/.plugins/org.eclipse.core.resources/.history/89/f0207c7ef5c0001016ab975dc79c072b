@@ -1,0 +1,41 @@
+package com.ssafy.mvc.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.ssafy.mvc.model.dto.Board;
+import com.ssafy.mvc.model.service.BoardService;
+
+@Controller
+public class BoardController {
+	
+	@Autowired
+	private final BoardService boardService;
+	
+	public BoardService {
+		
+	}
+	
+	//등록페이지 주세요
+	@GetMapping("/writeform")
+	public String writeform() {
+		return "/board/writeform";
+	}
+	
+	//등록해줘잉
+	@PostMapping("/write")
+	public String write(@ModelAttribute Board board) {
+		//서비스 호출
+		
+		//전체 목록을 보여주도록 해줘잉
+		return "redirect:list";
+	}
+	
+	
+	
+	
+	
+}

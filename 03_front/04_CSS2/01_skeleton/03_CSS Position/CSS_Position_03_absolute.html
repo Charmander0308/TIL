@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>03_absolute</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Absolute Position */
+      .absolute .square:nth-child(2){
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Absolute Position -->
+      <div>
+        <div class="title">ABSOLUTE</div>
+        <div class="position-box absolute">
+          <div class="square"></div>
+          <div class="square">absolute</div>
+          <div class="square"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

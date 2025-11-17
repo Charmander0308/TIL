@@ -1,0 +1,5 @@
+package com.ssafy.mvc.view;
+
+public class FileDownloadView {
+
+}

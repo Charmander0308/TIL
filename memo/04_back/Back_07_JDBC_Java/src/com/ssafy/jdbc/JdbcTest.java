@@ -1,0 +1,71 @@
+package com.ssafy.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class JdbcTest {
+	
+	//1. 드라이버 로드
+	public JdbcTest() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("드라이버 로딩 성공!!");
+		} catch (ClassNotFoundException e) {
+			System.out.println("드라이버 로딩 실패!!");
+//			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		JdbcTest db = new JdbcTest();
+		
+		for(Board board : db.selectAll()) {
+			System.out.println(board.toString());
+		}
+	}
+
+	
+	//메서드
+	//DB랑 잘 연결해서 정상적으로 동작을 한다면...
+	public List<Board> selectAll(){
+		List<Board> list = new ArrayList<>();
+		//DB 연결 (커넥션 통로를 뚫겠다)
+		try {
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ssafy_board?serverTimezone=UTC", "root", "1234");
+			Statement stmt = conn.createStatement();
+			String sql = "SELECT * FROM board";	//전체 게시글을 조회하는 쿼리문
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				Board board = new Board();	//바구니
+				board.setId(rs.getInt("id"));
+				board.setWriter(rs.getString("writer"));
+				board.setTitle(rs.getString("title"));
+				board.setContent(rs.getString("content"));
+				board.setViewCnt(rs.getInt("view_cnt"));
+				board.setRegDate(rs.getString("reg_date"));
+				
+				list.add(board);
+			}
+				
+			
+			//원래는 finally로 종료를 해줘잉!
+			rs.close();
+			stmt.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	
+}

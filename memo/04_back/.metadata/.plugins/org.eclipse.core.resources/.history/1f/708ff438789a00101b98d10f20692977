@@ -1,0 +1,71 @@
+package com.ssafy.board.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import com.ssafy.board.model.dto.Board;
+import com.ssafy.board.model.service.BoardService;
+import com.ssafy.board.model.service.BoardServiceImpl;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/board")
+public class BoardController extends HttpServlet {
+	
+	private BoardService service = BoardServiceImpl.getInstance();
+	
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String act = request.getParameter("act");
+		
+		switch (act) {
+		case "writeform":
+			doWriteForm(request, response);
+			break;
+		case "write":
+			doWrite(request, response);
+			break;
+		case "list":
+			doList(request, response);
+			break;
+		}
+		
+	}
+
+	private void doList(HttpServletRequest request, HttpServletResponse response) {
+		//전체 조회 -> 서비스 호출 -> 레포지토리 호출 -> 메모리에서 꺼내와서 -> 서비스 -> 컨트롤러
+		List<Board> list = service.getList();
+		
+	}
+
+	private void doWrite(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String title = request.getParameter("title");
+		String writer = request.getParameter("writer");
+		String content = request.getParameter("content");
+		
+		//게시글 객체를 생성하자
+		Board board = new Board(title, writer, content);
+		
+		//등록하자! -> 서비스 호출 -> 레포지토리 호출 -> 메모리 저장 -> 레포 -> 서비스 -> 컨트롤러
+		service.writeBoard(board);
+		
+		//이후의 작업은.. 등록을 확인하던지, 메인으로 튕기던지.
+		//1. 메인 튕기기 -> index.jsp 리다이렉트
+		
+		//2. 조회 -> 리다이렉트
+		//2-1. 전체조회
+		response.sendRedirect("board?act=list");
+		//2-2. 상세조회
+//		response.sendRedirect("board?act=detail?id=게시글id");
+	}
+
+	private void doWriteForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//작성페이지 주세용~~~ -> 포워딩
+		request.getRequestDispatcher("/WEB-INF/board/writeform.jsp").forward(request, response);
+		
+	}
+}

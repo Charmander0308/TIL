@@ -1,0 +1,264 @@
+:root {
+  --bg: #f7f8fb;
+  --card: #fff;
+  --line: #e5e7eb;
+  --muted: #6b7280;
+  --yellow: #ffe08a;
+  --blue: #60a5fa;
+  --cyan: #22d3ee;
+  --brand: #0ea5e9;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+  
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* 페이지 뼈대(푸터 바닥 고정) */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+
+/* 공통 레이아웃/카드 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.row {
+  display: flex;
+  gap: 16px;
+}
+.gap {
+  gap: 16px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+}
+.title {
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* 헤더 */
+header {
+  border-bottom: 1px solid bk;
+}
+.top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+nav ul {
+  display: flex;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.brand {
+  font-weight: 800;
+}
+.search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+.search input {
+  border: 0;
+  min-width: 220px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+}
+.btn {
+  border: 1px solid black;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.btn.primary {
+  background: blue;
+  color: #fff;
+  border-color: white;
+}
+
+/* 요약 타일 */
+.tiles {
+  display: flex;
+  gap: 16px;
+  margin: 18px 0;
+}
+.tile {
+  flex: 1;
+  border-radius: 12px;
+  padding: 14px;
+  color: #111;
+}
+.tile .big {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 6px 0;
+}
+.tile.yellow {
+  background: var(--yellow);
+}
+.tile.blue {
+  background: var(--blue);
+  color: #012a5a;
+}
+.tile.cyan {
+  background: var(--cyan);
+  color: #033a3f;
+}
+
+/* 주차별/퀘스트 (2열) */
+.cols-2 {
+  display: flex;
+  gap: 16px;
+}
+.col {
+  flex: 1;
+}
+.timeline {
+  position: relative;
+  padding-left: 42px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--line);
+}
+.dot {
+  position: relative;
+  margin: 14px 0;
+}
+.dot::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.quest li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px dashed var(--line);
+}
+.quest li:first-child {
+  border-top: 0;
+}
+.badge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3949ab;
+  border: 1px solid #c7d2fe;
+}
+
+/* 학습자료/이러닝 */
+.cards {
+  display: flex;
+  gap: 12px;
+  overflow: auto;
+  padding-bottom: 4px;
+}
+.cards article {
+  min-width: 220px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+}
+figure {
+  margin: 0;
+}
+.thumb {
+  height: 120px;
+  background: #e5f4ff;
+  border-radius: 8px;
+  display: block;
+}
+aside.aside {
+  width: 260px;
+}
+
+/* 게시판 2열 */
+.boards {
+  display: flex;
+  gap: 16px;
+}
+.boards section {
+  flex: 1;
+}
+.posts li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px dashed var(--line);
+}
+.posts li:first-child {
+  border-top: 0;
+}
+.posts time {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* 푸터 */
+.foot {
+  background: #111827;
+  color: #cbd5e1;
+  border-top: 1px solid #0b1220;
+}
+.foot .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 16px;
+}
+.mini {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.mini a {
+  color: #9ca3af;
+  font-size: 13px;
+}
+

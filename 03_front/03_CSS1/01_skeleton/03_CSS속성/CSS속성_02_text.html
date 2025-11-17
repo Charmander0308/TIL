@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 텍스트 속성</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap");
+
+      /* reset css */
+      * {
+        box-sizing: border-box;
+        font-family: "Roboto", "Noto Sans KR", sans-serif;
+      }
+
+      body {
+        margin: 1rem;
+      }
+
+      h6,
+      h5,
+      h4,
+      h3,
+      h2,
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      /* title style */
+      h3 {
+        text-align: center;
+      }
+
+      hr {
+        width: 60%;
+      }
+
+      .example_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25%, auto));
+        margin-bottom: 3rem;
+      }
+
+      .example {
+        justify-self: center;
+      }
+
+      .text_container {
+        width: 220px;
+        height: 120px;
+        border: 1px solid black;
+        background-color: rgb(246, 248, 227);
+        padding: 10px;
+        overflow: auto;
+      }
+
+      .text_item {
+        font-size: 16px;
+      }
+
+      /* text-align 예시 */
+      .text_align_left {
+        text-align: left;
+      }
+
+      .text_align_right {
+        text-align: right;
+      }
+
+      .text_align_center {
+        text-align: center;
+      }
+
+      .text_align_justify {
+        text-align: justify;
+      }
+
+      /* text-decoration 예시 */
+      .text_decoration_none {
+        text-decoration: none;
+      }
+
+      .text_decoration_underline {
+        text-decoration: underline;
+      }
+
+      .text_decoration_overline {
+        text-decoration: overline;
+      }
+
+      .text_decoration_line_through {
+        text-decoration: line-through;
+      }
+
+      .text_decoration_combo {
+        text-decoration: underline overline dashed red;
+      }
+
+      /* text-indent 예시 */
+      .text_indent_10px {
+        text-indent: 10px;
+      }
+
+      .text_indent_20px {
+        text-indent: 20px;
+      }
+
+      .text_indent_30px {
+        text-indent: 30px;
+      }
+
+      .text_indent_negative {
+        text-indent: -10px;
+      }
+
+      /* text-transform 예시 */
+      .text_transform_none {
+        text-transform: none;
+      }
+
+      .text_transform_capitalize {
+        text-transform: capitalize;
+      }
+
+      .text_transform_uppercase {
+        text-transform: uppercase;
+      }
+
+      .text_transform_lowercase {
+        text-transform: lowercase;
+      }
+
+      /* white-space 예시 */
+      .white_space_normal {
+        white-space: normal;
+      }
+
+      .white_space_nowrap {
+        white-space: nowrap;
+      }
+
+      .white_space_pre {
+        white-space: pre;
+      }
+
+      .white_space_pre_line {
+        white-space: pre-line;
+      }
+
+      .white_space_pre_wrap {
+        white-space: pre-wrap;
+      }
+
+      /* vertical-align 예시 */
+      .vertical_align_container {
+        line-height: 100px;
+      }
+
+      .vertical_align_baseline {
+        vertical-align: baseline;
+      }
+
+      .vertical_align_top {
+        vertical-align: top;
+      }
+
+      .vertical_align_middle {
+        vertical-align: middle;
+      }
+
+      .vertical_align_bottom {
+        vertical-align: bottom;
+      }
+
+      .vertical_align_text_top {
+        vertical-align: text-top;
+      }
+
+      /* letter-spacing 예시 */
+      .letter_spacing_normal {
+        letter-spacing: normal;
+      }
+
+      .letter_spacing_1px {
+        letter-spacing: 1px;
+      }
+
+      .letter_spacing_3px {
+        letter-spacing: 3px;
+      }
+
+      .letter_spacing_negative {
+        letter-spacing: -1px;
+      }
+
+      /* word-spacing 예시 */
+      .word_spacing_normal {
+        word-spacing: normal;
+      }
+
+      .word_spacing_3px {
+        word-spacing: 3px;
+      }
+
+      .word_spacing_10px {
+        word-spacing: 10px;
+      }
+
+      .word_spacing_negative {
+        word-spacing: -2px;
+      }
+
+      /* line-height 예시 */
+      .line_height_normal {
+        line-height: normal;
+      }
+
+      .line_height_1_5 {
+        line-height: 1.5;
+      }
+
+      .line_height_2 {
+        line-height: 2;
+      }
+
+      .line_height_30px {
+        line-height: 30px;
+      }
+
+      /* color 예시 */
+      .color_red {
+        color: red;
+      }
+
+      .color_rgb {
+        color: rgb(0, 128, 0);
+      }
+
+      .color_rgba {
+        color: rgba(0, 0, 255, 0.5);
+      }
+
+      .color_hex {
+        color: #ff00ff;
+      }
+
+      .color_hsl {
+        color: hsl(39, 100%, 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center; margin-bottom: 2rem">
+      <h2>CSS 텍스트 속성 가이드</h2>
+      <p>웹 디자인에서 텍스트 형식과 배치를 위한 다양한 CSS 텍스트 속성들을 알아봅니다.</p>
+    </div>
+
+    <h3>text-align</h3>
+    <p style="text-align: center; margin-bottom: 1rem">텍스트의 수평 정렬 방식을 지정합니다. 문단, 제목, 표 등의 콘텐츠를 왼쪽, 오른쪽, 가운데 또는 양쪽 정렬로 배치할 수 있습니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) left</p>
+        <div class="text_container">
+          <div class="text_item text_align_left">텍스트를 왼쪽으로 정렬합니다. 이것은 대부분의 언어에서 기본 정렬 방식입니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) right</p>
+        <div class="text_container">
+          <div class="text_item text_align_right">텍스트를 오른쪽으로 정렬합니다. 아랍어나 히브리어와 같은 RTL 언어에 유용합니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) center</p>
+        <div class="text_container">
+          <div class="text_item text_align_center">텍스트를 가운데로 정렬합니다. 제목이나 캡션에 자주 사용됩니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) justify</p>
+        <div class="text_container">
+          <div class="text_item text_align_justify">텍스트를 양쪽으로 정렬하여 양쪽 가장자리가 일직선이 되도록 합니다. 단어 간 간격이 자동으로 조정됩니다. 신문이나 잡지처럼 보이게 합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>text-decoration</h3>
+    <p style="text-align: center; margin-bottom: 1rem">텍스트에 장식 선을 추가합니다. 밑줄, 윗줄, 취소선 등을 텍스트에 적용할 수 있으며, 선의 스타일과 색상도 지정할 수 있습니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) none</p>
+        <div class="text_container">
+          <div class="text_item text_decoration_none">아무런 장식이 없는 일반 텍스트입니다. 링크의 밑줄을 제거할 때 자주 사용됩니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) underline</p>
+        <div class="text_container">
+          <div class="text_item text_decoration_underline">텍스트 아래에 선을 그립니다. 링크에 기본적으로 적용되는 스타일입니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) overline</p>
+        <div class="text_container">
+          <div class="text_item text_decoration_overline">텍스트 위에 선을 그립니다. 특별한 강조가 필요한 경우 사용할 수 있습니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) line-through</p>
+        <div class="text_container">
+          <div class="text_item text_decoration_line_through">텍스트 중간에 선을 그립니다. 취소된 내용이나 더 이상 유효하지 않은 정보를 표시할 때 사용합니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>5) 복합 예시</p>
+        <div class="text_container">
+          <div class="text_item text_decoration_combo">여러 장식과 스타일, 색상을 함께 사용할 수 있습니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>text-indent</h3>
+    <p style="text-align: center; margin-bottom: 1rem">텍스트 블록의 첫 줄에 들여쓰기를 지정합니다. 일반적으로 문단의 시작을 표시하는 데 사용하며, 음수 값을 사용하면 내어쓰기가 됩니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) 10px</p>
+        <div class="text_container">
+          <div class="text_item text_indent_10px">첫 줄이 10픽셀 들여쓰기 됩니다. 이 문단은 첫 번째 줄만 들여쓰기가 적용됩니다. 나머지 텍스트는 일반적인 위치에서 시작합니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) 20px</p>
+        <div class="text_container">
+          <div class="text_item text_indent_20px">첫 줄이 20픽셀 들여쓰기 됩니다. 들여쓰기가 더 크기 때문에 시각적 구분이 더 명확합니다. 문단의 시작을 강조합니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) 30px</p>
+        <div class="text_container">
+          <div class="text_item text_indent_30px">첫 줄이 30픽셀 들여쓰기 됩니다. 더 큰 들여쓰기는 문단 구분을 더욱 명확하게 해줍니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) -10px</p>
+        <div class="text_container">
+          <div class="text_item text_indent_negative">첫 줄이 10픽셀 내어쓰기(hanging indent) 됩니다. 참고 문헌이나 목록에서 자주 사용되는 형식입니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>text-transform</h3>
+    <p style="text-align: center; margin-bottom: 1rem">텍스트의 대소문자를 변환합니다. 실제 텍스트 내용을 변경하지 않고 표시 방식만 바꾸므로, 원본 데이터는 그대로 유지됩니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) none</p>
+        <div class="text_container">
+          <div class="text_item text_transform_none">This is Normal Text with NO transformation applied. It appears exactly as it was written in the HTML.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) capitalize</p>
+        <div class="text_container">
+          <div class="text_item text_transform_capitalize">this text has each word capitalized. the first letter of every word becomes uppercase.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) uppercase</p>
+        <div class="text_container">
+          <div class="text_item text_transform_uppercase">This text is transformed to be all uppercase. It can be used for headings or emphasis.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) lowercase</p>
+        <div class="text_container">
+          <div class="text_item text_transform_lowercase">THIS TEXT IS TRANSFORMED TO BE ALL LOWERCASE, REGARDLESS OF HOW IT WAS ORIGINALLY TYPED.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>white-space</h3>
+    <p style="text-align: center; margin-bottom: 1rem;">요소 내의 공백과 줄바꿈을 어떻게 처리할지 지정합니다. 텍스트 서식을 유지하거나 줄바꿈을 제어하는 데 유용합니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) normal</p>
+        <div class="text_container">
+          <div class="text_item white_space_normal">
+            여러    공백이    하나로   합쳐집니다.
+            줄바꿈도 자동으로 
+            하나의 공백으로 처리됩니다.
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) nowrap</p>
+        <div class="text_container">
+          <div class="text_item white_space_nowrap">
+            텍스트가 줄바꿈 없이 한 줄로 표시됩니다. 컨테이너의 너비를 초과해도 줄바꿈이 발생하지 않습니다.
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) pre</p>
+        <div class="text_container">
+          <div class="text_item white_space_pre">
+            여러    공백이    그대로   유지됩니다.
+            줄바꿈도 
+            HTML에 입력된 그대로 
+            표시됩니다.
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) pre-line</p>
+        <div class="text_container">
+          <div class="text_item white_space_pre_line">
+            여러    공백은    하나로   합쳐지지만,
+            줄바꿈은 
+            유지됩니다.
+          </div>
+        </div>
+      </div>
+      <div class="example">
+        <p>5) pre-wrap</p>
+        <div class="text_container">
+          <div class="text_item white_space_pre_wrap">
+            여러    공백이    그대로   유지되며,
+            줄바꿈도 유지됩니다. 그리고 컨테이너 너비를 초과하면 자동 줄바꿈이 발생합니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>vertical-align</h3>
+    <p style="text-align: center; margin-bottom: 1rem">인라인 요소나 테이블 셀 내에서 수직 정렬을 지정합니다. 텍스트 라인 내에서 이미지나 아이콘의 위치를 조정할 때 유용합니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) baseline</p>
+        <div class="text_container vertical_align_container">
+          <span>일반 텍스트</span>
+          <img src="./assets/img/30x30.png" alt="작은 이미지" class="vertical_align_baseline" />
+          <span>와 이미지</span>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) top</p>
+        <div class="text_container vertical_align_container">
+          <span>일반 텍스트</span>
+          <img src="./assets/img/30x30.png" alt="작은 이미지" class="vertical_align_top" />
+          <span>와 이미지</span>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) middle</p>
+        <div class="text_container vertical_align_container">
+          <span>일반 텍스트</span>
+          <img src="./assets/img/30x30.png" alt="작은 이미지" class="vertical_align_middle" />
+          <span>와 이미지</span>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) bottom</p>
+        <div class="text_container vertical_align_container">
+          <span>일반 텍스트</span>
+          <img src="./assets/img/30x30.png" alt="작은 이미지" class="vertical_align_bottom" />
+          <span>와 이미지</span>
+        </div>
+      </div>
+      <div class="example">
+        <p>5) text-top</p>
+        <div class="text_container vertical_align_container">
+          <span>일반 텍스트</span>
+          <img src="./assets/img/30x30.png" alt="작은 이미지" class="vertical_align_text_top" />
+          <span>와 이미지</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>letter-spacing</h3>
+    <p style="text-align: center; margin-bottom: 1rem">글자 사이의 간격을 조정합니다. 타이포그래피 디자인에서 텍스트의 가독성이나 시각적 효과를 위해 사용됩니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) normal</p>
+        <div class="text_container">
+          <div class="text_item letter_spacing_normal">기본 간격으로 표시되는 일반적인 텍스트입니다. 글자 간격을 특별히 조정하지 않습니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) 1px</p>
+        <div class="text_container">
+          <div class="text_item letter_spacing_1px">글자 간격이 1픽셀 추가되어 약간 더 넓게 표시됩니다. 가독성이 향상될 수 있습니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) 3px</p>
+        <div class="text_container">
+          <div class="text_item letter_spacing_3px">글자 간격이 3픽셀로 크게 벌어집니다. 제목이나 특별한 효과에 사용됩니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) -1px</p>
+        <div class="text_container">
+          <div class="text_item letter_spacing_negative">글자 간격이 1픽셀 줄어들어 더 촘촘하게 표시됩니다. 공간을 절약하거나 특수 효과에 사용됩니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>word-spacing</h3>
+    <p style="text-align: center; margin-bottom: 1rem">단어 사이의 간격을 조정합니다. 텍스트 레이아웃과 가독성을 조정하는 데 사용되며, letter-spacing과는 달리 단어 단위로 작동합니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) normal</p>
+        <div class="text_container">
+          <div class="text_item word_spacing_normal">기본 간격으로 표시되는 일반적인 텍스트입니다. 단어 사이의 간격이 기본값으로 유지됩니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) 3px</p>
+        <div class="text_container">
+          <div class="text_item word_spacing_3px">단어 사이의 간격이 3픽셀 추가되어 조금 더 넓게 표시됩니다. 가독성이 향상될 수 있습니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) 10px</p>
+        <div class="text_container">
+          <div class="text_item word_spacing_10px">단어 사이의 간격이 10픽셀로 크게 벌어집니다. 특별한 강조나 시각적 효과에 사용됩니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) -2px</p>
+        <div class="text_container">
+          <div class="text_item word_spacing_negative">단어 사이의 간격이 2픽셀 줄어들어 더 촘촘하게 표시됩니다. 공간을 절약하거나 특별한 레이아웃에 사용됩니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>line-height</h3>
+    <p style="text-align: center; margin-bottom: 1rem">텍스트 줄 사이의 간격(행간)을 지정합니다. 가독성을 높이고 텍스트 블록의 시각적 밀도를 조절하는 데 중요한 속성입니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) normal (1.2)</p>
+        <div class="text_container">
+          <div class="text_item line_height_normal">기본 행간으로 표시되는 텍스트입니다. 일반적으로 폰트 크기의 약 1.2배 정도입니다. 브라우저의 기본 설정을 따릅니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) 1.5</p>
+        <div class="text_container">
+          <div class="text_item line_height_1_5">행간이 글자 크기의 1.5배로 설정됩니다. 웹 타이포그래피에서 가장 많이 사용되는 값 중 하나로, 가독성이 좋습니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) 2</p>
+        <div class="text_container">
+          <div class="text_item line_height_2">행간이 글자 크기의 2배로 설정됩니다. 더 넓은 간격으로 텍스트가 시원하게 보이며, 긴 문장을 읽기 쉽게 만듭니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) 30px</p>
+        <div class="text_container">
+          <div class="text_item line_height_30px">행간이 30픽셀 고정 값으로 설정됩니다. 글자 크기에 관계없이 일정한 행간을 유지합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>color</h3>
+    <p style="text-align: center; margin-bottom: 1rem">텍스트의 색상을 지정합니다. 색상 이름, RGB, RGBA, HEX, HSL 등 다양한 방식으로 표현할 수 있습니다.</p>
+    <hr />
+    <div class="example_container">
+      <div class="example">
+        <p>1) 색상 이름 (red)</p>
+        <div class="text_container">
+          <div class="text_item color_red">색상 이름을 직접 사용하여 텍스트 색상을 지정할 수 있습니다. CSS에는 약 140개의 표준 색상 이름이 있습니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>2) RGB (0,128,0)</p>
+        <div class="text_container">
+          <div class="text_item color_rgb">RGB 값으로 색상을 지정합니다. 빨강, 초록, 파랑 값을 0-255 사이의 숫자로 지정합니다. 이 텍스트는 초록색입니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>3) RGBA (0,0,255,0.5)</p>
+        <div class="text_container">
+          <div class="text_item color_rgba">RGB에 알파 채널(투명도)을 추가한 것입니다. 알파 값은 0(완전 투명)에서 1(완전 불투명) 사이입니다. 이 텍스트는 반투명 파란색입니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>4) HEX (#FF00FF)</p>
+        <div class="text_container">
+          <div class="text_item color_hex">16진수 코드로 색상을 표현합니다. #RRGGBB 형식으로, 각 색상 채널을 00부터 FF까지의 값으로 지정합니다. 이 텍스트는 마젠타(자홍색)입니다.</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>5) HSL (39, 100%, 50%)</p>
+        <div class="text_container">
+          <div class="text_item color_hsl">색상(Hue), 채도(Saturation), 명도(Lightness)로 색상을 표현합니다. 이 방식은 색상을 직관적으로 조정하기 쉽습니다. 이 텍스트는 주황색입니다.</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

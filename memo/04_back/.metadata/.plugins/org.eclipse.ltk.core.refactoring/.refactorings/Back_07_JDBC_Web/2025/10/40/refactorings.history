@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;Back_07_JDBC_Web&apos;&#x0D;&#x0A;- Original project: &apos;Back_07_JDBC_Web&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     detail.jsp&#x0D;&#x0A;     list.jsp&#x0D;&#x0A;     writeform.jsp" description="Delete elements" element1="src/main/webapp/WEB-INF/board/list.jsp" element2="src/main/webapp/WEB-INF/board/writeform.jsp" element3="src/main/webapp/WEB-INF/board/detail.jsp" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="3" stamp="1759367298048" subPackages="false" version="1.0"/>
+</session>

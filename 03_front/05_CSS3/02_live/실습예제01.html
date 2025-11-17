@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Semantic + Flex Layout</title>
+  <style>
+    /* 레이아웃 보기 편하게만 최소 스타일 */
+    .wrap {
+      width: 760px;
+      height: 420px;
+      margin: 20px auto;
+      border: 4px solid #eee;
+      box-shadow: 0 0 0 1px #ddd inset;
+    }
+    header, footer {
+      background-color: tomato;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* 서울15 박병준(마춤뻡 선생님) */
+    main {
+      display: flex;
+      height: calc(100% - 50px - 50px);
+    }
+    section {
+      flex: 1;
+      background-color: teal;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    #articles {
+      display: flex;
+    }
+
+    article {
+      background-color: beige;
+      border: 1px solid black;
+      width: 33.3%;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- 상단영역 -->
+     <header>
+      <span>상단</span>
+     </header>
+    <!-- 중간영역 -->
+    <main>
+      <section>
+        <div>
+          메인
+        </div>
+        <div id="articles">
+          <article>1</article>
+          <article>2</article>
+          <article>3</article>
+        </div>
+      </section>
+      <aside>
+        <span>사이드</span>
+      </aside>
+    </main>
+    <!-- 하단영역 -->
+     <footer>
+      <span>푸터</span>
+     </footer>
+  </div>
+</body>
+
+</html>

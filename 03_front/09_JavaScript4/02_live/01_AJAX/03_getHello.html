@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Text 파일 이용</title>
+  </head>
+  <body>
+    <h1>서버에서 받은 메시지</h1>
+    <div id="msg-view"></div>
+    <button id="get-data">요청</button>
+
+    <script>
+      //1. 클라이언트에서 이벤트를 발생을 시킨다.(버튼 클릭)
+      document.querySelector("#get-data").addEventListener('click', function(){
+        //2. XMLHttpRequest 객체 생성
+        const xhr = new XMLHttpRequest();
+        //3. Open()
+        xhr.open('GET', './data/hello.txt')
+        //4. 상태 변경에 따른 콜백함수를 지정하자.
+        xhr.onreadystatechange = responseMsg
+        //5. Send()
+        xhr.send()
+
+      })
+
+      function responseMsg(){
+        if(this.readyState === 4){
+          if(this.status === 200) {
+            console.log(this)
+            document.querySelector("#msg-view").textContent = this.response
+          }else {
+            console.log('정상적으로 받지는 못했어!')
+          }
+        }
+      }
+
+
+
+
+    </script>
+  </body>
+</html>

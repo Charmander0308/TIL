@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>display: inline-flex vs flex</title>
+  <style>
+
+    /* inline 성격의 flex 컨테이너 */
+      .flex-inline {
+      background-color: black;
+      color:white;
+      display: inline-flex
+    }
+    /* block 성격의 flex 컨테이너 */
+    .flex-block {
+      background-color: black;
+      color:white;
+      display: flex
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h2>display: inline-flex</h2>
+    <span>시작</span>
+    <div class="flex-inline">
+      <div>flexItem</div>
+      <div>flexItem</div>
+    </div>
+    <span>끝</span>
+    <span>시작</span>
+    <div class="flex-inline">
+      <div>flexItem</div>
+      <div>flexItem</div>
+    </div>
+    <span>끝</span>
+    <h2>display:flex</h2>
+    <span>시작</span>
+    <div class="flex-block">
+      <div>flexItem</div>
+      <div>flexItem</div>
+    </div>
+    <span>끝</span>
+    <span>시작</span>
+    <div class="flex-block">
+      <div>flexItem</div>
+      <div>flexItem</div>
+    </div>
+    <span>끝</span>
+  </div>
+</body>
+</html>

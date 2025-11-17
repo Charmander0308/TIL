@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="01_기본문법_제어문"/>
+	<classpathentry excluding="예시답안_절대 먼저 보지 않기/|사전제공코드/" kind="src" path="02_배열"/>
+	<classpathentry kind="src" path="02_배열/사전제공코드"/>
+	<classpathentry kind="src" path="02_배열/예시답안_절대 먼저 보지 않기"/>
+	<classpathentry kind="src" path="03_클래스와객체/사전제공코드"/>
+	<classpathentry kind="src" path="03_클래스와객체/중간코드"/>
+	<classpathentry kind="src" path="04_객체배열관리/사전제공코드"/>
+	<classpathentry kind="src" path="04_객체배열관리/중간코드"/>
+	<classpathentry kind="src" path="05_상속/중간코드"/>
+	<classpathentry kind="src" path="06_다형성_추상클래스/중간코드"/>
+	<classpathentry kind="src" path="07_인터페이스_제네릭/중간코드/src"/>
+	<classpathentry kind="src" path="10_예외처리/중간코드/src"/>
+	<classpathentry kind="src" path="12_관통프로젝트/중간코드"/>
+	<classpathentry kind="lib" path="12_관통프로젝트/사전제공파일/gson-2.10.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

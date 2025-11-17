@@ -1,0 +1,32 @@
+package com.ssafy.mvc.view;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.view.AbstractView;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Component
+public class FileDownloadView extends AbstractView {
+
+	private ResourceLoader loader;
+	
+	//생성자 주입(생성자가 1개뿐이라면 Autowired 생략 가능)
+//	@Autowired
+	public FileDownloadView(ResourceLoader loader) {
+		this.loader = loader;
+	}
+	
+	@Override
+	protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		//이미지의 식별자를 넘겼어야 하는데 컨트롤러에서 이름을 넣어서 보냈다.
+		String fileName = (String)model.get("fileName");
+		//이미지가 어디에 있는데? static/img
+	}
+	
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="APS기본_01_Array1"/>
+	<classpathentry kind="src" path="APS기본_02_Array2"/>
+	<classpathentry kind="src" path="APS기본_03_Array3"/>
+	<classpathentry kind="src" path="APS기본_04_문제풀이"/>
+	<classpathentry kind="src" path="APS기본_05_String"/>
+	<classpathentry kind="src" path="APS기본_06_Stack1"/>
+	<classpathentry kind="src" path="APS기본_07_Stack2"/>
+	<classpathentry kind="src" path="APS기본_08_Queue"/>
+	<classpathentry kind="src" path="APS기본_09_LinkedList1"/>
+	<classpathentry kind="src" path="APS기본_10_LinkedList2"/>
+	<classpathentry kind="src" path="APS기본_11_Tree"/>
+	<classpathentry kind="src" path="APS기본_12_Heap"/>
+	<classpathentry kind="src" path="APS응용_01_부분집합"/>
+	<classpathentry kind="src" path="APS응용_02_조합"/>
+	<classpathentry kind="src" path="APS응용_03_분할정복"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

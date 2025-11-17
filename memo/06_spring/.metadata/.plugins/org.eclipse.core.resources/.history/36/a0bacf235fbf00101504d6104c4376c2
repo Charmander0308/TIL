@@ -1,0 +1,17 @@
+package com.ssafy.mvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class FileController {
+	
+	@GetMapping("/singleFileForm")
+	public String singleFileForm() {
+		return "singleFileForm";
+	}
+	
+	@PostMapping("/singleFileUpload")
+	
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>04_fixed</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        height: 2000px;
+      }
+      .fixed .square:nth-child(2){
+        background-color: pink;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Fixed Position -->
+      <div>
+        <div class="title">FIXED</div>
+        <div class="position-box fixed">
+          <div class="square"></div>
+          <div class="square">fixed</div>
+          <div class="square"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

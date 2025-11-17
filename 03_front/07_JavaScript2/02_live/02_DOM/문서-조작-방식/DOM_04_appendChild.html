@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  
+  <script>
+    // 코드를 작성하시오.
+    const parents2 = document.createElement("div")
+
+    const child2 = document.createElement("p")
+
+    child2.appendChild("태그 추가") // error
+
+    parents2.append(child2)
+
+    // 어떤 요소가 출력될지 고민해보세요. (콘솔창 확인 필수)
+    console.log(parents2)
+    
+    // body에 추가 해줘야지 웹에서 보인다.
+    document.body.append(parents2) // 주석을 해지해보세요.
+  </script>
+</body>
+</html>

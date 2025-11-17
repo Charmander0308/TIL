@@ -1,0 +1,39 @@
+package com.ssafy.board.test;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.ssafy.board.config.MyBatisConfig;
+
+public class Test {
+	public static void main(String[] args) {
+//		MyBatisConfig config = new MyBatisConfig();
+		
+		//전체게시글조회
+		//쿼리문을 날리기 위해서
+		SqlSession session = MyBatisConfig.getFactory().openSession(true);
+		
+		session.close();
+		
+		
+		//상세게시글조회
+		
+		
+		
+		//게시글등록
+		
+		
+		
+		
+		//게시글수정
+		
+		
+		
+		//게시글삭제
+		
+		
+		
+		
+		
+		
+	}
+}

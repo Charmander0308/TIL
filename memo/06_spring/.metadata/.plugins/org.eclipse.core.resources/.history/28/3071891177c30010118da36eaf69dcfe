@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판</title>
+</head>
+<body>
+	<h2>게시판 메인 페이지</h2>
+	<a href="/writeform"></a>
+
+</body>
+</html>

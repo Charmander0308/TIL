@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Emmet 기본</title>
+    <style>
+      section {
+        border: 1px dashed #ccc;
+        padding: 12px;
+        margin: 16px 0;
+      }
+      pre {
+        background: #f6f8fa;
+        padding: 8px;
+        overflow: auto;
+      }
+      small {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Emmet — 기본</h1>
+    <p>
+      <small
+        >에디터에서 Emmet 축약을 입력하고 <code>Tab</code>을 누르면 아래와 같은
+        HTML이 생성됩니다.</small
+      >
+    </p>
+
+    <!-- 0) ! : HTML5 문서 골격 -->
+    <section>
+      <h2>0) 문서 기본 구조</h2>
+      <pre>Emmet: <strong>!</strong>  (또는 <strong>html:5</strong>)</pre>
+      <!-- DOCTYPE + html/head/body 뼈대 생성 -->
+      <pre>
+결과 (요약)
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;...&lt;/head&gt;
+  &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </section>
+
+    <!-- 1) id / class -->
+    <section>
+      <h2>1) id / class</h2>
+      <pre>Emmet: <strong>div#my-id</strong>   /   <strong>span.my-class</strong></pre>
+      <!-- # = id,  . = class -->
+      <div id="my-id">div#my-id → id="my-id"</div>
+      <span class="my-class">span.my-class → class="my-class"</span>
+    </section>
+
+    <!-- 2) 자식(>) / 형제(+) -->
+    <section>
+      <h2>2) 자식( &gt; ) / 형제( + )</h2>
+      <pre>Emmet: <strong>main&gt;section</strong>    /    <strong>main&gt;section+aside</strong></pre>
+      <!-- > 자식으로 중첩,  + 같은 레벨 형제 추가 -->
+      <main style="border: 1px solid #ddd; padding: 8px; margin-top: 6px">
+        <section style="background: #f9f9f9; padding: 6px; margin-bottom: 6px">
+          자식 section
+        </section>
+        <section style="background: #f9f9f9; padding: 6px; margin-bottom: 6px">
+          형제 section
+        </section>
+        <aside style="background: #f1f1f1; padding: 6px">형제 aside</aside>
+      </main>
+    </section>
+
+    <!-- 3) 반복(*) / 자동번호($) / 텍스트({}) -->
+    <section>
+      <h2>3) 반복( * ) / 번호( $ ) / 텍스트( { } )</h2>
+      <pre>Emmet: <strong>ul&gt;li.item$*3{아이템 $}</strong></pre>
+      <!-- * N개 반복, $는 1부터 자동 번호, { } 는 텍스트 노드 -->
+      <ul>
+        <li class="item1">아이템 1</li>
+        <li class="item2">아이템 2</li>
+        <li class="item3">아이템 3</li>
+      </ul>
+    </section>
+
+    <!-- 4) 리스트+링크 간단 패턴 -->
+    <section>
+      <h2>4) 리스트+링크 빠르게</h2>
+      <pre>Emmet: <strong>ul&gt;li*3&gt;a[href="#"]{Menu $}</strong></pre>
+      <ul>
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+      </ul>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+package com.ssafy.jdbc;
+
+import java.util.List;
+
+public class JdbcTest {
+	
+	//1. 드라이버 로드
+	public JdbcTest() {
+	}
+	
+	public static void main(String[] args) {
+		JdbcTest db = new JdbcTest();
+	}
+
+	
+	//메서드
+//	public List<> selectAll(){
+//		
+//	}
+	
+	
+}

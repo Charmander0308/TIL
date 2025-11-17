@@ -1,0 +1,64 @@
+{
+  "challenges": [
+    {
+      "id": 1,
+      "title": "일일 단백질 목표 달성",
+      "description": "하루 100g의 단백질 섭취하기",
+      "type": "protein",
+      "goal": 100,
+      "current": 85,
+      "startDate": "2024-03-15",
+      "endDate": "2024-03-22",
+      "status": "active",
+      "participants": 15
+    },
+    {
+      "id": 2,
+      "title": "칼로리 제한 챌린지",
+      "description": "하루 2000kcal 이하로 섭취하기",
+      "type": "calories",
+      "goal": 2000,
+      "current": 1800,
+      "startDate": "2024-03-15",
+      "endDate": "2024-03-22",
+      "status": "active",
+      "participants": 20
+    },
+    {
+      "id": 3,
+      "title": "탄수화물 제한 챌린지",
+      "description": "하루 150g 이하의 탄수화물 섭취하기",
+      "type": "carbs",
+      "goal": 150,
+      "current": 120,
+      "startDate": "2024-03-15",
+      "endDate": "2024-03-22",
+      "status": "active",
+      "participants": 12
+    },
+    {
+      "id": 4,
+      "title": "지방 제한 챌린지",
+      "description": "하루 50g 이하의 지방 섭취하기",
+      "type": "fat",
+      "goal": 50,
+      "current": 45,
+      "startDate": "2024-03-15",
+      "endDate": "2024-03-22",
+      "status": "active",
+      "participants": 18
+    },
+    {
+      "id": 5,
+      "title": "식사 기록 챌린지",
+      "description": "7일 동안 모든 식사 기록하기",
+      "type": "meals",
+      "goal": 21,
+      "current": 15,
+      "startDate": "2024-03-15",
+      "endDate": "2024-03-22",
+      "status": "active",
+      "participants": 25
+    }
+  ]
+} 

@@ -1,0 +1,39 @@
+package com.ssafy.mvc.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+@Controller
+public class FileController {
+	
+	@Autowired
+	private ResourceLoader resourceLoader;
+	
+	@GetMapping("/singleFileForm")
+	public String singleFileForm() {
+		return "singleFileForm";
+	}
+	
+	@PostMapping("/singleFileUpload")
+	public String singleFileUpload(@RequestParam("file") MultipartFile file) {
+		System.out.println(file.getOriginalFilename());
+		
+		//저장작업
+		//파일이 있다면..
+		if(file != null && file.getSize() > 0) {
+			//저장을 하겠다.
+			//임시메모리 공간에 있고, 저장하지 않으면 없어짐...
+			resourceLoader.getResource("classpath:/static/img");
+			
+		}
+		
+		
+		return "result";
+	}
+	
+}

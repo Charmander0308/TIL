@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>input 실습</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <input type="text" id="text-input">
+  <p id="content"></p>
+
+  <script>
+    // 코드를 작성하시오.
+    //1. inputTag 가져와~~
+    const inputTag = document.getElementById("text-input")
+    //2. input 이벤트가 발생을 했을때 P태그 내용물 바꾸기~~
+    inputTag.addEventListener('input', function(event){
+      // console.log(event)
+      console.log(inputTag.value)
+      console.log(event.target.value)
+      document.querySelector("#content").textContent = inputTag.value
+    })
+  </script>
+</body>
+</html>

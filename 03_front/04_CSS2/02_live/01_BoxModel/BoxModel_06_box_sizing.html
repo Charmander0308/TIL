@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>06 box-sizing (content-box vs border-box)</title>
+    <style>
+      .box {
+        height: 200px;
+        width: 200px;
+        padding: 20px;
+        margin: 20px;
+        border: 2px solid #333;
+        background: #cde5ff;
+      }
+      /* 기본은 content box */
+      .border-box {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>box-sizing</h1>
+    <p>
+      둘 다 <code>width:200px; padding:20px; border:2px;</code> 이지만 계산 기준이 다름
+    </p>
+
+      <div class="box">
+        content-box
+      </div>
+      <hr>
+      <div class="box border-box">
+        border-box
+      </div>
+  </body>
+</html>

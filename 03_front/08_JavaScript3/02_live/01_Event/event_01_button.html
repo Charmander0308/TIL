@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang=ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Button 실습</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <button id="myBtn">+</button>
+    <p id="cnt">0</p>
+  </div>
+  <script>
+    // 코드를 작성하시오.
+    // 1. 버튼을 가지고 오자!
+    const btn = document.querySelector("#myBtn")
+    // 2. cnt 변수를 준비해서 -> p 태그 안의 값으로 사용하자
+    let cnt = 0;
+    // 3. 가져온 버튼을 클릭했을때, 값을 증가시키는 이벤트 작성
+    btn.addEventListener("click", function() {
+      cnt++;
+      console.log(cnt)
+      //p태그의 요소를 가지고 와서, cnt 값으로 덮어씌우자!
+      const pTag = document.querySelector("#cnt")
+      // pTag.innerText = cnt;
+      pTag.textContent = cnt;
+    })
+
+
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+package com.ssafy.board.model.service;
+
+import java.util.List;
+
+import com.ssafy.board.model.dto.Board;
+
+//싱글턴으로 만들어야한다.
+public class BoardServiceImpl implements BoardService {
+	
+	private static BoardService service = new BoardServiceImpl();
+	
+	private BoardServiceImpl() {
+	}
+	
+	public static BoardService getInstance() {
+		
+	}
+	
+	
+	@Override
+	public List<Board> getList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Board getBoard(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void writeBoard(Board board) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void modifyBoard(Board board) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void removeBoard(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

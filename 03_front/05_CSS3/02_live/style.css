@@ -1,0 +1,59 @@
+:root {
+    --bg: #ecebeb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    background: var(--bg);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 5px solid black;
+    height: 60px;
+    align-items: center;
+}
+
+nav > ul {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    border: 1px solid black;
+    padding: 6px;
+    border-radius: 10px;
+}   
+
+
+
+
+
+
+
+
+
+
+
+

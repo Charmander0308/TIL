@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Board.java&apos; to &apos;Back_07_JDBC_Java/src/com.ssafy.jdbc&apos;&#x0D;&#x0A;- Original project: &apos;Back_06_MVC&apos;&#x0D;&#x0A;- Destination element: &apos;Back_07_JDBC_Java/src/com.ssafy.jdbc&apos;&#x0D;&#x0A;- Original element: &apos;com.ssafy.board.model.dto.Board.java&apos;" description="Copy compilation unit" destination="=Back_07_JDBC_Java/src&lt;com.ssafy.jdbc" element1="/src\/main\/java&lt;com.ssafy.board.model.dto{Board.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1759364887362" units="1" version="1.0"/>
+</session>
