@@ -44,6 +44,17 @@ commit;
 
 SELECT * FROM users;
 
-SELECT u.id, u.password, u.name, c.name as curriculum_name
-FROM users as u, curriculum as c
+
+
+
+SELECT u.id, u.password, u.name, c.name curriculumName
+FROM users u , curriculum c
 WHERE u.curriculum_code = c.code;
+
+
+
+
+
+
+
+
