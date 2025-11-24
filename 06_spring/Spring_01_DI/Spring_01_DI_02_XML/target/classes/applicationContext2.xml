@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 빈등록(풀패키지명) -->
+	<bean class="com.ssafy.di.Desktop" id="desktop"></bean>
+	
+	<!-- 생성자 주입 -->
+	<!-- <bean class="com.ssafy.di.Programmer" id="programmer">
+		<constructor-arg ref="desktop"></constructor-arg>
+	</bean> -->
+	
+	<!-- 설정자 주입 -->
+	<bean class="com.ssafy.di.Programmer" id="programmer">
+		<property name="computer" ref="desktop"></property>
+	</bean>
+	
+		
+</beans>

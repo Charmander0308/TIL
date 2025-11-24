@@ -1,0 +1,26 @@
+package com.ssafy.mvc.filter;
+
+import java.io.IOException;
+
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+
+//@Component //해당 방식의 등록 모든 경로와 매핑을 한것과 동일한 너낌
+//@Order(1) //Order 통해 필터의 동작 순서를 제어할수 있음 주로 양수를 사용한다.
+public class MyFilter implements Filter {
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		System.out.println("서블릿 전1");
+		chain.doFilter(request, response);
+		System.out.println("서블릿 후1");
+	}
+
+}
