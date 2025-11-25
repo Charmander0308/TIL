@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>Vue Click</title>
@@ -10,20 +11,23 @@
         <h2>클릭 이벤트 처리</h2>
         <!-- <button v-on:click="count++">{{count}}</button> -->
         <button v-on:click="plus">{{count}}</button>
+
     </div>
 
     <script>
         const {createApp, ref} = Vue
-        //뷰 인스턴스를 생성한다
+        //뷰 인스턴스를 생성한다.
         const app = createApp({
+            //변수,함수 선언
             setup(){
-                // const count = ref(0)
-                let count = ref(0)
+                const count = ref(0)
+                // let count = ref(0)
 
                 //함수 표현식
                 const plus = function(){
                     count.value++;
                 }
+
 
                 return {
                     count,
@@ -36,4 +40,5 @@
         app.mount("#app")
     </script>
 </body>
+
 </html>

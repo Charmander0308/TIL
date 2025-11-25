@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      .active {
+        color: crimson;
+      }
+
+      .text-primary {
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- 객체바인딩 -->
+      <div :class="{active: isActive}">글글글</div>
+      <div class="static" :class="{active: isActive, 'text-primary': hasInfo}">글글글</div>
+      <div class="static" :class="classObj">글글글</div>
+      <!-- 배열 바인딩 -->
+      <div :class="[activeClass, infoClass]">배열배열</div>
+      <div :class="[{active: isActive}, infoClass]">배열배열</div>
+
+
+    </div>
+    <script>
+      const { createApp, ref } = Vue;
+
+      const app = createApp({
+        setup() {
+          const isActive = ref(true)
+          const hasInfo = ref(true)
+          const classObj = ref({
+            active: isActive,
+            'text-primary': hasInfo,
+          })
+          const activeClass = ref("active")
+          const infoClass = ref("text-primary")
+          return {
+            isActive,
+            hasInfo,
+            classObj,
+            activeClass,
+            infoClass,
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

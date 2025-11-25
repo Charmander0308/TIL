@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- 기본적인 콧수염 구문 -->
+      <p>{{msg}}</p>
+      <!-- 날것의 HTML을 써보자 -->
+      <p>{{rawHTML}}</p>
+      <div v-html="rawHTML"></div>
+      <!-- 속성바인딩 -->
+      <div v-bind:id="dynamicId">나는 동적 ID야</div>
+      <!-- 자바스크립트 표현식 -->
+      <div>{{number + 1}}</div>
+      <div>{{ ok ? 'Yes':'No'}}</div>
+      <!-- 문자열 뒤집기 생략 -->
+      <div :id="`list-${number}`">템플릿리터럴 동적ID</div>
+      <!-- 보여/안보여 -->
+      <div v-if="ok">IF 보이나요?</div>
+      <div v-show="ok">SHOW 보이나요?</div>
+
+    </div>
+    <script>
+      const { createApp, ref } = Vue;
+
+      const app = createApp({
+        setup() {
+          const msg = ref("어제 해봤던거야~~")
+          const rawHTML = ref(`<span style="color:red">해당 글씨는 빨간색?</span>`)
+          const dynamicId = ref('my-id')
+          const number = ref(1)
+          const ok = ref(false)
+          return {
+            msg,
+            rawHTML,
+            dynamicId,
+            number,
+            ok,
+
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

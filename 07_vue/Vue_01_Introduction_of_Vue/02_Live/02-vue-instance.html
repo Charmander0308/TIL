@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue APP</title>
-    <!-- 1. Vue 쓸래용 (CDN) -> @3으로 해놓으면 3버전 중 암거나~ 라는 뜻 -->
+    <!-- 1. Vue 쓸래잉 (CDN) -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <h2>여기는?</h2> <!--관련 없음-->
     <div id="app">
-        <h3>여기는 관련있나?</h3>   <!--관련 있음-->
         <h2>{{message}}</h2>
         <!-- ref 함수로 감싼 값은 .value 같은게 필요했는데? -->
         <h2>{{message2}}</h2>
-        <!-- 콧수염 구문 안에서는 그냥 값만 쓰는게 아니라 JS표현식도 가능하다 -->
-        <h2>{{message2.split('').reverse.join('')}}</h2>
+        <!-- 콧수염 구문안에서는 그냥 값만 쓰는게 아니라 JS 표현식도 가능하다. -->
+        <h2>{{message2.split('').reverse().join('')}}</h2>
     </div>
     <script>
-        const {createApp, ref} = Vue //구조분해할당
+        const {createApp, ref} = Vue //구조분해할당 (신희태,유규봉 좋았다)
 
-        // 2. Vue Instance 생성
+        // 2. Vue Instance 생성 
         const app = createApp({
             setup(){
                 //4. Vue 인스턴스에서 사용할 변수, 함수, ... 사용
@@ -30,16 +28,16 @@
                 // console.log(message2)
                 // console.log(message2.value)
                 return {
-                    message, //message: message 지만 키와 값이 같다면 줄여쓸 수 있음
+                    message,
                     message2,
                 }
             }
         })
-        
+
         // 3. DOM 연결을 하겠다.
         app.mount("#app")
-
     </script>
-    
+
+
 </body>
 </html>

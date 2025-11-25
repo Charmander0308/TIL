@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script>
+      const { createApp, ref } = Vue;
+
+      const app = createApp({
+        setup() {
+          const myArr = ref([
+            { name: "Alice", age: 20 },
+            { name: "Bella", age: 21 },
+          ]);
+          const myObj = ref({
+            name: "Cathy",
+            age: 30,
+          });
+
+          const myInfo = ref([
+            { name: "Alice", age: 20, friends: ["Bella", "Cathy", "Dan"] },
+            { name: "Bella", age: 21, friends: ["Alice", "Cathy"] },
+          ]);
+
+          return {
+            myArr,
+            myObj,
+            myInfo,
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>
