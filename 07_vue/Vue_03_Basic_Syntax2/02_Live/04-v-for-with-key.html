@@ -8,14 +8,15 @@
 
   <body>
     <div id="app">
-      <div v-for="item in items" :key=""item.id>
+      <div v-for="item in items" :key="item.id">
         {{item}}
       </div>
-      <hr>
-      <!--key 속성은 고유해야하므로 index같은거 쓰지마세용-->
-      <div v-for="(item, index) in items" :key="index">
+      <!-- key 속성은 고유해야하므로 index같은거 쓰지마세요오 -->
+      <div v-for="(item,index) in items" :key="index">
         {{item}}
       </div>
+
+
     </div>
 
     <script>

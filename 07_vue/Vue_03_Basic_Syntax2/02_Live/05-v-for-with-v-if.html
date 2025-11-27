@@ -7,10 +7,10 @@
   </head>
   <body>
     <div id="app">
-      <h3>완료된 할 일</h3>
+      <h3>완료된 할일</h3>
       <!-- v-if가 v-for보다 우선순위가 높아서 접근 불가 -->
       <!-- <ul>
-        <li v-for="todo in todos" :key="todo.id" v-if="isComplete === true">
+        <li v-for="todo in todos" :key="todo.id" v-if="todo.isComplete === true">
           {{todo.name}}
         </li>
       </ul> -->
@@ -20,7 +20,7 @@
         </li>
       </ul>
 
-      <h3>미완료된 할 일</h3>
+      <h3>미완료된 할일</h3>
       <ul>
         <template v-for="todo in todos" :key="todo.id">
           <li v-if="!todo.isComplete">
@@ -45,12 +45,26 @@
           ]);
 
           const completeTodos = computed(()=>{
-            return todos.value.filter((todo)=> todo.isComplete === true)
+            return todos.value.filter((todo)=> todo.isComplete)
           })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           return {
             todos,
-            completeTodos,
+            completeTodos
           };
         },
       });

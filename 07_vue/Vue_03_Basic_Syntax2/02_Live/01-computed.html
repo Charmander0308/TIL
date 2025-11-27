@@ -9,13 +9,13 @@
   <body>
     <div id="app">
       <h2>남은 할 일</h2>
-      <p>{{ todos.length > 0 ? "야근 각!" : "조기 퇴근"}}</p>
+      <p>{{todos.length > 0 ? "야근 각!" : "조기 퇴근"}}</p>
       <h3>computed</h3>
-      <p>{{ restOfTodos }}</p>
-      <p>{{ restOfTodos }}</p>
+      <p>{{restOfTodos}}</p>
+      <p>{{restOfTodos}}</p>
       <h3>method</h3>
-      <p>{{ getRestOfTodos() }}</p>
-      <p>{{ getRestOfTodos() }}</p>
+      <p>{{getRestOfTodos()}}</p>
+      <p>{{getRestOfTodos()}}</p>
     </div>
 
     <script>
@@ -37,7 +37,7 @@
           })
 
           // 함수 생성해서 사용해보기
-          const getRestOfTodos = function(){
+          const getRestOfTodos = function() {
             console.log("메서드 호출")
             return todos.value.length > 0 ? "함수 결과 야근 각!": "함수 결과 퇴근 각!"
           }
@@ -45,7 +45,7 @@
           return {
             todos,
             restOfTodos,
-            getRestOfTodos,
+            getRestOfTodos
           };
         },
       });

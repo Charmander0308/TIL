@@ -9,44 +9,51 @@
   <body>
     <div id="app">
       <!-- v-for 기본 -->
-       <div v-for="person in myArr">
+      <div v-for="person in myArr">
         {{person.name}} : {{person.age}}
-       </div>
-       <hr>
-       <!-- v-for 인덱스 -->
-       <div v-for="(person, index) in myArr">
+      </div>
+      <hr>
+      <!-- v-for 인덱스 -->
+      <div v-for="(person, index) in myArr">
         {{index+1}}번 {{person.name}} : {{person.age}}
-       </div>
-       <hr>
-       <!-- v-for 객체 -->
-       <div v-for="value in myObj">
+      </div>
+      <hr>
+      <!-- v-for 객체 -->
+      <div v-for="value in myObj">
         {{value}}
-       </div>
-       <hr>
-       <!-- v-for 객체, key 포함 -->
-       <div v-for="(value, key) in myObj">
-        {{key}} : {{value}}
-       </div>
-       <hr>
-       <!-- v-for 객체, key, index 포함 -->
-       <div v-for="(value, key, index) in myObj">
-        {{index}} - {{key}} : {{value}}
-       </div>
-       <hr>
+      </div>
+      <hr>
+      <!-- v-for 객체, key 포함 -->
+      <div v-for="(value, key) in myObj">
+        {{key}}: {{value}}
+      </div>
+      <!-- v-for 객체, key, index 포함 -->
+      <div v-for="(value, key, index) in myObj">
+       {{index}} - {{key}}: {{value}}
+      </div>
+      <hr>
 
-       <!-- 여러요소를 동레벨로 묶어서 처리 -->
-       <ul>
+      <!-- 여러요소를 동레벨로 묶어서 처리 -->
+      <ul>
         <template v-for="item in myArr">
           <li>{{item.name}}</li>
           <li>{{item.age}}</li>
           <hr>
         </template>
-       </ul>
-       <ul v-for="person in myInfo">
+      </ul>
+      <hr>
+      <!-- 친구 목록을 반복문을 돌리자 -->
+      <ul v-for="person in myInfo">
         <li v-for="friend in person.friends">
           {{person.name}}과 {{friend}} 베프야
         </li>
-       </ul>
+      </ul>
+
+      <!-- 중첩 반복문을 배웠다 -> 구구단!(마숙) -->
+
+
+
+
 
     </div>
     <script>

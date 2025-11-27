@@ -14,6 +14,7 @@
       <input type="text" v-model="message">
       <p>{{message}}</p>
       <p>{{messageLength}}</p>
+
     </div>
 
     <script>
@@ -22,8 +23,8 @@
         setup() {
           const count = ref(0);
 
-          const countWatch = watch(count, (newValue, oldValue)=> {
-            console.log("콜백함수 수행 API 호출일 수도 있음")
+          const countWatch = watch(count, (newValue , oldValue )=>{
+            console.log("콜백함수 수행 API 호출일수도 있음")
             console.log(`old:${oldValue}-> new:${newValue}`)
           })
 
@@ -34,12 +35,15 @@
           })
 
 
+
+
+
           return {
             count,
             countWatch,
             message,
             messageLength,
-            messageWatch,
+            messageWatch
           };
         },
       });

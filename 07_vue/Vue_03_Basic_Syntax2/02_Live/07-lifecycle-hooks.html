@@ -20,14 +20,15 @@
           const count = ref(0);
 
           onMounted(()=>{
-            //연결이 되었다. -> 초기에 데이터 목록
+            // 연결이 되었다. -> 초기에 데이터 목록
             console.log("연결되었다.")
           })
 
           onUpdated(()=>{
-            //내부적으로 변경이 일어났다.
+            // 내부적으로 변경이 일어났다.
             console.log("수정되었다.")
           })
+
 
           return {
             count,
